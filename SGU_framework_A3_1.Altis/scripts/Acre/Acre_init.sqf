@@ -1,7 +1,7 @@
 //INIT ACRE 2
 
 //Kolla om ACRE2 är laddat.. ISF exekvera koden för språk.
-if(isClass(configfile >> "CfgPatches" >> "ACRE2"))then{
+if(isClass(configfile >> "CfgPatches" >> "ACRE_main"))then{
 /*
 	Acre 2 setup script way.
 	Here is the code we use to setup bable:
@@ -41,6 +41,5 @@ if(isClass(configfile >> "CfgPatches" >> "ACRE2"))then{
 
 //West speaks English, east speaks Russian, indp and civilians speak Arabic. 
 //If you want to make a translator, put this in the unit's init: 
-
 //this setVariable ["f_languages",["en", "ar"]];
 };
