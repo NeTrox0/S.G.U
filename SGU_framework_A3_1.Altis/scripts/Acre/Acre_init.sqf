@@ -6,10 +6,20 @@ if(isClass(configfile >> "CfgPatches" >> "ACRE_main"))then{
 	Acre 2 setup script way.
 	Here is the code we use to setup bable:
 */
+
+	//Basic Setup of ACRE 2. 
+//	[true, true] call acre_api_fnc_setupMission;
+	//The first option is used to indicate if each side should have their own unique language 
+	//The second is is used to indicate if the radio channels for each team should be on different frequencies. 
+	// So that players on other teams can not hear your communications.
+
+
+	//Define and add available languages.
 	f_available_languages = [
-		["en", "English"],
-		["ru", "Russian"],
-		["ar", "Arabic"]
+		["sv", "Svenska"],
+//		["en", "Engelska"],
+		["ru", "Ryska"],
+		["gr", "Grekiska"]
 	];
 	{
 		_x call acre_api_fnc_babelAddLanguageType;
@@ -24,22 +34,21 @@ if(isClass(configfile >> "CfgPatches" >> "ACRE_main"))then{
 
 		switch (playerside) do {
 		case west: {
-				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["en"];};
+				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["sv"];};
 			};
 		case east: {
 				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["ru"];};
 			};
 		case independent: {
-				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["ar"];};
+				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["gr"];};
 			};
 		case civilian: {
-				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["ar"];};
+				if (_languagesPlayerSpeaks isEqualTo []) then {_languagesPlayerSpeaks = ["gr"];};
 			};
 		};
 		_languagesPlayerSpeaks call acre_api_fnc_babelSetSpokenLanguages;
 	};
 
 //West speaks English, east speaks Russian, indp and civilians speak Arabic. 
-//If you want to make a translator, put this in the unit's init: 
-//this setVariable ["f_languages",["en", "ar"]];
+//If you want to make a translator, put this in the unit's init: this setVariable ["f_languages",["sv", "ar"]];
 };
