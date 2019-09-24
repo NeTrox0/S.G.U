@@ -15,7 +15,6 @@
 		// Halo Jump
 	SGU_Flag addAction["<t size='1.2' shadow='2' color='#ff9900'>HALO jump</t>", "scripts\halojump.sqf",[],1,false,true,"","_this distance _target < 10"];
 	
-	
 		// Teleport..
 	SGU_Flag addAction ["<t size='1.2' shadow='2' color='#0055FF'>Move To Outpost Mufflon</t>", "scripts\teleport.sqf", "MUFFLON",1,false,true,"","_this distance _target < 10"];
 	SGU_Flag addAction ["<t size='1.2' shadow='2' color='#0055FF'>Move To USS-Freedom</t>", "scripts\teleport.sqf", "USS-FREEDOM",1,false,true,"","_this distance _target < 10"];
@@ -31,11 +30,8 @@
 
 	SGU_Arsenal addAction[("<t size='1.3' shadow='2' color='#33cc33'>") + "Open Arsenal" + "</t>",{["Open",true] call BIS_fnc_arsenal;},[],1,false,true,"","_this distance _target < 15"];
 	SGU_Arsenal addAction ["<t size='1.2' shadow='1' color='#ff0000'>----------------</t>", "",[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>SGU M90 Gear</t>", {[player] execVM "scripts\gear\SGU_Basic_Gear_M90.sqf"},[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>SGU M90K Gear</t>", {[player] execVM "scripts\gear\SGU_Basic_Gear_M90K.sqf"},[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>SGU OCP Gear</t>", {[player] execVM "scripts\gear\SGU_Basic_Gear_OCP.sqf"},[],1,false,true,"","_this distance _target < 15"];
-	
-	
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90</t>", {[player,"W","A"] execVM "scripts\gear\SGU_getGear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90K</t>", {[player,"D","A"] execVM "scripts\gear\SGU_getGear.sqf"},[],1,false,true,"","_this distance _target < 15"];
 };
 
 //Group Management system. initialize the player side of the framework.
