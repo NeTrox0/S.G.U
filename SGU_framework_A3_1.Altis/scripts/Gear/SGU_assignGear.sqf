@@ -61,7 +61,7 @@ switch (true) do {
 			default {
 				_unit addHeadgear H_M90;
 			};
-		}:
+		};
 		//Helmet för TL
 		if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_soldier_SL_F")) then {
 			removeHeadgear _unit;
