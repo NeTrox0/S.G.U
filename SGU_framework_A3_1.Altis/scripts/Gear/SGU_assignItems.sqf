@@ -32,9 +32,10 @@ if (_unit isKindOf "B_Pilot_F") then {
 
 //Add Radio(ACRE) for all units;
 switch (true) do {
-	case (_unit isKindOf "B_Pilot_F");
-	case (_unit isKindOf "B_Helipilot_F"): {
-		_unit addItemToVest "ACRE_PRC148";
+	case (_unit isKindOf "B_Pilot_F"): { // JET Pilot
+		_unit addItemToUniform "ACRE_PRC152";
+	};
+	case (_unit isKindOf "B_Helipilot_F"): { // Heli Pilot
 		_unit addItemToVest "ACRE_PRC152";
 	};
 	case (_unit isKindOf "B_soldier_TL_F");
