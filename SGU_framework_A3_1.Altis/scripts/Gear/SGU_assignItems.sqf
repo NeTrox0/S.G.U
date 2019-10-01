@@ -38,11 +38,14 @@ switch (true) do {
 	case (_unit isKindOf "B_Helipilot_F"): { // Heli Pilot
 		_unit addItemToVest "ACRE_PRC152";
 	};
-	case (_unit isKindOf "B_soldier_TL_F");
+	case (_unit isKindOf "B_soldier_TL_F"): {
+		_unit addItemToUniform "ACRE_PRC343";
+		_unit addItemToVest "ACRE_PRC152";
+	};
 	case (_unit isKindOf "B_Soldier_SL_F"): {
 		_unit addItemToUniform "ACRE_PRC343";
-		_unit addItemToVest "ACRE_PRC148";
 		_unit addItemToVest "ACRE_PRC152";
+		_unit addItemToBackpack "ACRE_PRC117F";
 	};
 	default {
 		_unit addItemToUniform "ACRE_PRC343";	
