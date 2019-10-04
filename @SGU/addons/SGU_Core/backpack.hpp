@@ -1,3 +1,10 @@
+/*
+	Config for Bags
+	
+	By Trox
+
+*/
+//Assault Pack
 	class SGU_Assault_Pack: Bag_Base
 	{
 		author = "Trox";
@@ -20,6 +27,7 @@
 		passThrough=1;
 		mass=20;
 	};
+//Assault Pack Trox
 	class SGU_Assault_Pack_Trox: Bag_Base
 	{
 		author = "Trox";
@@ -42,6 +50,7 @@
 		passThrough=1;
 		mass=20;
 	};
+//Kitbag
 	class SGU_Kitbag: Bag_Base
 	{
 		author = "Trox";
@@ -56,6 +65,7 @@
 		passThrough=1;
 		mass=40;
 	};
+//Kitbag Medic
 	class SGU_Kitbag_Medic: Bag_Base
 	{
 		author = "Trox";
@@ -71,4 +81,29 @@
 		mass=40;
 	};
 	
-	
+//Tan Backpacks.
+//Assault Pack Tan
+	class SGU_Assault_Pack_Tan: SGU_Assault_Pack
+	{
+		author = "Trox";
+		hiddenSelectionsTextures[]=
+		{
+			"a3\weapons_f\ammoboxes\bags\data\backpack_compact_cbr_co.paa",
+			"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"
+		};
+		displayName="SGU Assault Pack Tan";
+	};
+//Kitbag Tan
+	class SGU_Kitbag_Tan: SGU_Kitbag
+	{
+		author = "Trox";
+		hiddenSelectionsTextures[]=	{"\SGU_Core\Data\Backpack\SGU_Kitbag_cbr_co.paa"};
+		displayName="SGU Kitbag Tan";
+	};
+//Kitbag Tan Medic
+	class SGU_Kitbag_Medic_Tan: SGU_Kitbag_Medic
+	{
+		author = "Trox";
+		hiddenSelectionsTextures[]=	{"\SGU_Core\Data\Backpack\SGU_Kitbag_medic_cbr_co.paa"};
+		displayName="SGU Kitbag Tan (Medic)";
+	};

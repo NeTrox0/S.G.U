@@ -1,4 +1,9 @@
-    class SGU_Carrier_Rig: Vest_Camo_Base
+/*
+	Config for Vests
+	
+	By Trox
+*/	
+	class SGU_Carrier_Rig: Vest_Camo_Base
     {
 		author = "Trox";
 		_generalMacro="SGU_Carrier_Rig";
@@ -133,7 +138,7 @@
             };
         }; 
     };
-	   class SGU_Carrier_Rig_Trox: V_PlateCarrier_Kerry
+	class SGU_Carrier_Rig_Trox: V_PlateCarrier_Kerry
     {
 		author = "Trox";
 		_generalMacro="SGU_Carrier_Rig_Name";
@@ -177,4 +182,24 @@
                 };
             };
         }; 
+    };
+	
+	//Tan vest colour
+	class SGU_Carrier_Rig_Tan: SGU_Carrier_Rig
+    {
+		author = "Trox";
+        displayName = "SGU Carrier Rig Tan";
+        hiddenSelectionsTextures[] = {"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"};
+    };
+    class SGU_Carrier_Rig_Lite_Tan: SGU_Carrier_Rig_Lite
+    {
+		author = "Trox";
+        displayName = "SGU Carrier Rig Lite Tan";
+        hiddenSelectionsTextures[] = {"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"};
+    };
+    class SGU_Carrier_Rig_Name_Tan: SGU_Carrier_Rig_Name
+    {
+		author = "Trox";
+        displayName = "SGU Carrier Rig Tan Name";
+        hiddenSelectionsTextures[] = {"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"};
     };
