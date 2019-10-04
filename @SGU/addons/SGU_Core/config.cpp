@@ -14,16 +14,22 @@ class CfgPatches
 		units[] = 
 		{
 			"SGU_Assault_Pack",
+			"SGU_Assault_Pack_Tan",
 			"SGU_Assault_Pack_Trox",
 			"SGU_Kitbag",
-			"SGU_Kitbag_Medic"
+			"SGU_Kitbag_Tan",
+			"SGU_Kitbag_Medic",
+			"SGU_Kitbag_Medic_Tan"
 		};
 		weapons[] = 
 		{
 			"SGU_Carrier_Rig",
+			"SGU_Carrier_Rig_Tan",
 			"SGU_Carrier_Rig_Lite",
-			"SGU_Carrier_Rig_Trox",
-			"SGU_Carrier_Rig_Name"
+			"SGU_Carrier_Rig_Lite_Tan",
+			"SGU_Carrier_Rig_Name",
+			"SGU_Carrier_Rig_Name_Tan",
+			"SGU_Carrier_Rig_Trox"
 		};
 		icon = "SGU_Core\UI\SGU_Patch_x64_64.paa";
 		requiredVersion = 0.1;

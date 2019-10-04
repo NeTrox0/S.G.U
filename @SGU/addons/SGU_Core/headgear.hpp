@@ -1,3 +1,8 @@
+/*
+	Config for Helmets
+	
+	By Trox
+*/
     class SGU_Berret: ItemCore
     {
         author = "Trox S.G.U";
