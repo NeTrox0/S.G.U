@@ -89,7 +89,6 @@ switch (true) do {
 		_unit addSecondaryWeaponItem "MRAWS_HEAT_F";
 		
 		for "_i" from 1 to 2 do {_unit addItemToBackpack "MRAWS_HEAT_F"};
-//		for "_i" from 1 to 3 do {_unit addItemToBackpack "MRAWS_HEAT55_F"};
 		for "_i" from 1 to 2 do {_unit addItemToBackpack "MRAWS_HE_F"};
 	};
 	default {
