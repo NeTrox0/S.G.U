@@ -10,27 +10,33 @@
 */
 
 //Helmets
-H_M90  = "SAM_HelmetB_M90";
-H_M90K = "SAM_HelmetB_M90K";
-H_M90B = "SAM_HelmetB_M90b";
-H_P = "H_PilotHelmetHeli_B"; //Heli Pilot
-H_F = "H_PilotHelmetFighter_B"; //JET Pilot
+H_M90  	= "SAM_HelmetB_M90";
+H_M90K 	= "SAM_HelmetB_M90K";
+H_M90B 	= "SAM_HelmetB_M90b";
+H_P 	= "H_PilotHelmetHeli_B"; //Heli Pilot
+H_F 	= "H_PilotHelmetFighter_B"; //JET Pilot
 
 //Uniforms
-U_M90  = "SAM_Crye_M90_uniform";
-U_M90K = "SAM_Crye_M90K_uniform";
-U_F = "U_B_PilotCoveralls"; //JET Pilot
+U_M90  	= "SAM_Crye_M90_uniform";
+U_M90K 	= "SAM_Crye_M90K_uniform";
+U_F 	= "U_B_PilotCoveralls"; //JET Pilot
 
 //Vests
-V_CR  = "SGU_Carrier_Rig";
-V_CRL = "SGU_Carrier_Rig_Lite";
-V_CRN = "SGU_Carrier_Rig_Name";
-V_P = "V_TacVest_blk"; //Heli pilot
+V_CR  	= "SGU_Carrier_Rig";
+V_CRL 	= "SGU_Carrier_Rig_Lite";
+V_CRN 	= "SGU_Carrier_Rig_Name";
+V_CR_T	= "SGU_Carrier_Rig_Tan";
+V_CRL_T = "SGU_Carrier_Rig_Lite_Tan";
+V_CRN_T = "SGU_Carrier_Rig_Name_Tan";
+V_P 	= "V_TacVest_blk"; //Heli pilot
 
 //Backpacks
-B_A  = "SGU_Assault_pack";
-B_K  = "SGU_Kitbag";
-B_KM = "SGU_Kitbag_Medic";
+B_A  	= "SGU_Assault_Pack";
+B_K  	= "SGU_Kitbag";
+B_KM 	= "SGU_Kitbag_Medic";
+B_A_T  	= "SGU_Assault_Pack_Tan";
+B_K_T  	= "SGU_Kitbag_Tan";
+B_KM_T 	= "SGU_Kitbag_Medic_Tan";
 
 
 ///-----------------------------------------------------------------------------
@@ -101,7 +107,11 @@ switch (true) do {
 		_unit addVest V_P;
 	};
 	default {
-		_unit addVest selectRandom [V_CR, V_CRL, V_CRN];
+		if (_cammo == "D") then {
+			_unit addVest selectRandom [V_CR_T, V_CRL_T, V_CRN_T];
+		} else {
+			_unit addVest selectRandom [V_CR, V_CRL, V_CRN];
+		};
 	};
 };
 
@@ -109,13 +119,21 @@ switch (true) do {
 //backpack
 switch (true) do {
 	case (_unit isKindOf "B_medic_F"): {
-		_unit addBackpack B_KM;
+		if (_cammo == "D") then {
+			_unit addBackpack B_KM_T;
+		} else {
+			_unit addBackpack B_KM;
+		};
 	};
 	case (_unit isKindOf "B_Pilot_F"): {
 		// No Backpack for JET Pilot
 	};
 	default {
-		_unit addBackpack B_A;
+		if (_cammo == "D") then {
+			_unit addBackpack B_A_T;
+		} else {
+			_unit addBackpack B_A;
+		};
 	};
 };
 

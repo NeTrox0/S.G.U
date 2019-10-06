@@ -62,6 +62,7 @@ if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F")) then
 };
 
 
+//mer random mat ?
 //MAT för JET PILOT?
 //if ((_unit isKindOf "B_Pilot_F") then {} else {};
 
