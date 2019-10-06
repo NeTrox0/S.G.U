@@ -62,31 +62,14 @@ if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F")) then
 };
 
 
-//ACE Survival Food and drink.
-_unit addItemToBackpack "ACE_MRE_ChickenTikkaMasala";
-_unit addItemToBackpack "ACE_Can_RedGull";
-_unit addItemToBackpack "ACE_Canteen";
-
-//mer random mat ?
 //MAT för JET PILOT?
 //if ((_unit isKindOf "B_Pilot_F") then {} else {};
 
-/*
-this addItemToBackpack "ACE_Can_Franta";
-this addItemToBackpack "ACE_Can_RedGull";
-this addItemToBackpack "ACE_Can_Spirit";
-
-this addItemToBackpack "ACE_Canteen";
-
-this addItemToBackpack "ACE_MRE_BeefStew";
-this addItemToBackpack "ACE_MRE_ChickenTikkaMasala";
-this addItemToBackpack "ACE_MRE_ChickenHerbDumplings";
-this addItemToBackpack "ACE_MRE_CreamChickenSoup";
-this addItemToBackpack "ACE_MRE_CreamTomatoSoup";
-this addItemToBackpack "ACE_MRE_LambCurry";
-this addItemToBackpack "ACE_MRE_MeatballsPasta";
-this addItemToBackpack "ACE_MRE_SteakVegetables";
-*/
+//ACE Survival Food and drink.
+_unit addItemToBackpack selectRandom ["ACE_MRE_ChickenTikkaMasala","ACE_MRE_CreamChickenSoup","ACE_MRE_MeatballsPasta","ACE_MRE_SteakVegetables","ACE_MRE_BeefStew"];
+_unit addItemToBackpack selectRandom ["ACE_Can_Franta","ACE_Can_Spirit"];
+_unit addItemToBackpack "ACE_Can_RedGull";
+_unit addItemToBackpack "ACE_Canteen";
 
 
 //Engineer items like EOD and explosives
