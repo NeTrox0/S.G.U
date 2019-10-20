@@ -30,8 +30,8 @@
 
 	SGU_Arsenal addAction[("<t size='1.3' shadow='2' color='#33cc33'>") + "Open Arsenal" + "</t>",{["Open",true] call BIS_fnc_arsenal;},[],1,false,true,"","_this distance _target < 15"];
 	SGU_Arsenal addAction ["<t size='1.2' shadow='1' color='#ff0000'>----------------</t>", "",[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90</t>", {[player,"W","A"] execVM "scripts\gear\SGU_getGear.sqf"},[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90K</t>", {[player,"D","A"] execVM "scripts\gear\SGU_getGear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90</t>", {[player,"W","A"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90K</t>", {[player,"D","A"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
 };
 
 //Group Management system. initialize the player side of the framework.
