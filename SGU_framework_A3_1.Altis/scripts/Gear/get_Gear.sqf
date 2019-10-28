@@ -45,4 +45,7 @@ sleep 2;
 [_unit] execVM "scripts\gear\weapons\get_Weapons.sqf";
 sleep 2;
 
+//assign insignia 
+[_unit,"SGU_Insignia"] call BIS_fnc_setUnitInsignia;
+
 Systemchat "Sådärja, det bör vara allt. Lycka till!";
