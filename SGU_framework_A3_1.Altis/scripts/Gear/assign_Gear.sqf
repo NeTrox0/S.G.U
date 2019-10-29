@@ -1,49 +1,16 @@
 /*
 *	Select the gear for unit, using some parameters for Cammo
-*	Requires: SAM 3 and SGU
+*	Requires: SAM 3, SGU and ILLBE rewrite if TFAR is loaded.
 *	
 *	Parameters:
 *	Player,
-*	_cammo values "W" or "D",
+*	_cammo values "W" or "D"
 *
 *	By Trox
 */
 
-//Helmets
-H_M90  	= "SAM_HelmetB_M90";
-H_M90K 	= "SAM_HelmetB_M90K";
-H_M90B 	= "SAM_HelmetB_M90b";
-H_P 	= "H_PilotHelmetHeli_B"; //Heli Pilot
-H_F 	= "H_PilotHelmetFighter_B"; //JET Pilot
 
-//Uniforms
-U_M90  	= "SAM_Crye_M90_uniform";
-U_M90K 	= "SAM_Crye_M90K_uniform";
-U_F 	= "U_B_PilotCoveralls"; //JET Pilot
-
-//Vests
-V_CR  	= "SGU_Carrier_Rig";
-V_CRL 	= "SGU_Carrier_Rig_Lite";
-V_CRN 	= "SGU_Carrier_Rig_Name";
-V_CR_T	= "SGU_Carrier_Rig_Tan";
-V_CRL_T = "SGU_Carrier_Rig_Lite_Tan";
-V_CRN_T = "SGU_Carrier_Rig_Name_Tan";
-V_P 	= "V_TacVest_blk"; //Heli pilot
-
-//Backpacks
-B_A  	= "SGU_Assault_Pack";
-B_K  	= "SGU_Kitbag";
-B_KM 	= "SGU_Kitbag_Medic";
-B_A_T  	= "SGU_Assault_Pack_Tan";
-B_K_T  	= "SGU_Kitbag_Tan";
-B_KM_T 	= "SGU_Kitbag_Medic_Tan";
-
-
-///-----------------------------------------------------------------------------
-// DO NOT EDIT BELOW THIS LINE !!!!
-///-----------------------------------------------------------------------------
-
-//select the sent values.
+//get the sent values.
 _unit =  _this select 0;
 _cammo = _this select 1;
 
@@ -51,27 +18,21 @@ _cammo = _this select 1;
 //Helmet
 switch (true) do {
 	case (_unit isKindOf "B_Pilot_F"): {
-		_unit addHeadgear H_F;
+		_unit addHeadgear "H_PilotHelmetFighter_B";
 	};
 	case (_unit isKindOf "B_Helipilot_F"): {
-		_unit addHeadgear H_P;
+		_unit addHeadgear "H_PilotHelmetHeli_B";
+	};
+	case (_unit isKindOf "B_soldier_TL_F");
+	case (_unit isKindOf "B_soldier_SL_F"): {
+		//Helmet för TL
+		_unit addHeadgear "SAM_HelmetB_M90B";
 	};
 	default {
-		switch (_cammo) do {
-			case "W": {
-				_unit addHeadgear H_M90;
-			};
-			case "D": {
-				_unit addHeadgear H_M90K;
-			};
-			default {
-				_unit addHeadgear H_M90;
-			};
-		};
-		//Helmet för TL
-		if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_soldier_SL_F")) then {
-			removeHeadgear _unit;
-			_unit addHeadgear H_M90B;
+		if (_cammo == "W") then {
+			_unit addHeadgear "SAM_HelmetB_M90";
+	    } else {
+			_unit addHeadgear "SAM_HelmetB_M90K";
 		};
 	};
 };
@@ -80,19 +41,13 @@ switch (true) do {
 //uniform
 switch (true) do {
 	case (_unit isKindOf "B_Pilot_F"): {
-		_unit forceAddUniform U_F;
+		_unit forceAddUniform "U_B_PilotCoveralls";
 	};
 	default {
-		switch (_cammo) do {
-			case "W": {
-				_unit forceAddUniform U_M90;
-			};
-			case "D": {
-				_unit forceAddUniform U_M90K;
-			};
-			default {
-				_unit forceAddUniform U_M90;
-			};
+		if (_cammo == "W") then {
+			_unit forceAddUniform "SAM_Crye_M90_uniform";
+		} else {
+			_unit forceAddUniform "SAM_Crye_M90K_uniform";
 		};
 	};
 };
@@ -104,13 +59,13 @@ switch (true) do {
 		//No vest for JET Pilot
 	};
 	case (_unit isKindOf "B_Helipilot_F"): {
-		_unit addVest V_P;
+		_unit addVest "V_TacVest_blk";
 	};
 	default {
-		if (_cammo == "D") then {
-			_unit addVest selectRandom [V_CR_T, V_CRL_T, V_CRN_T];
+		if (_cammo == "W") then {
+			_unit addVest selectRandom ["SGU_Carrier_Rig", "SGU_Carrier_Rig_Lite", "SGU_Carrier_Rig_Name"];
 		} else {
-			_unit addVest selectRandom [V_CR, V_CRL, V_CRN];
+			_unit addVest selectRandom ["SGU_Carrier_Rig_Tan", "SGU_Carrier_Rig_Lite_Tan", "SGU_Carrier_Rig_Name_Tan"];
 		};
 	};
 };
@@ -118,23 +73,31 @@ switch (true) do {
 
 //backpack
 switch (true) do {
-	case (_unit isKindOf "B_medic_F"): {
-		if (_cammo == "D") then {
-			_unit addBackpack B_KM_T;
+	//Add TFAR radio bags to TL/SL if TFAR is loaded
+	case ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F"))): {
+		if (_cammo == "W") then {
+			_unit addBackpack "tfw_ilbe_whip_gr";
 		} else {
-			_unit addBackpack B_KM;
+			_unit addBackpack "tfw_ilbe_whip_coy";
+		};
+	};
+	//Add medic backpack
+	case (_unit isKindOf "B_medic_F"): {
+		if (_cammo == "W") then {
+			_unit addBackpack "SGU_Kitbag_Medic";
+		} else {
+			_unit addBackpack "SGU_Kitbag_Medic_Tan";
 		};
 	};
 	case (_unit isKindOf "B_Pilot_F"): {
 		// No Backpack for JET Pilot
 	};
 	default {
-		if (_cammo == "D") then {
-			_unit addBackpack B_A_T;
+		if (_cammo == "W") then {
+			_unit addBackpack "SGU_Assault_Pack";
 		} else {
-			_unit addBackpack B_A;
+			_unit addBackpack "SGU_Assault_Pack_Tan";
 		};
-		
 	};
 };
 

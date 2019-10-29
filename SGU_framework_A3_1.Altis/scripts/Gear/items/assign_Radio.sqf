@@ -36,12 +36,30 @@ switch (true) do {
 			};
 		};
 	};
-/*
-	//Check if TFAR is loaded. (Will have an impact on TL with BACKPACKS. maby this should run early?)
-	case (isClass(configfile >> "CfgPatches" >> "TFAR")): {
-	//Add Radio (TFAR) fall all units. 	
+
+	//Check if TFAR is loaded.
+	case (isClass(configfile >> "CfgPatches" >> "tfar_core")): {
+		//Add Radio (TFAR) fall all units.
+		switch (true) do {
+			case (_unit isKindOf "B_Pilot_F"): { // JET Pilot
+				_unit linkItem "TFAR_anprc152";
+			};
+			case (_unit isKindOf "B_Helipilot_F"): { // Heli Pilot
+				_unit linkItem "TFAR_anprc152";
+			};
+			case (_unit isKindOf "B_soldier_TL_F"): {
+				_unit linkItem "TFAR_microdagr";
+				_unit linkItem "TFAR_anprc152";
+			};
+			case (_unit isKindOf "B_Soldier_SL_F"): {
+				_unit linkItem "TFAR_microdagr";
+				_unit linkItem "TFAR_anprc152";
+			};
+			default {
+				_unit linkItem "TFAR_rf7800str";
+			};
+		};
 	};
-*/
 	default {
 		//Add the default arma radio
 		_unit linkItem "ItemRadio";

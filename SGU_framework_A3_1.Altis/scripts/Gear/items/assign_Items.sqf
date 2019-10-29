@@ -14,8 +14,21 @@ _unit = _this select 0;
 //Link some items to correct slots.
 _unit linkItem "ItemMap";
 _unit linkItem "ItemCompass";
-_unit linkItem "ItemWatch";
-_unit linkItem "ItemGPS";
+
+//IF TFAR is loaded and unit is a TL or SL do not give them any Watch. TFAR_MICRODAGR will take its place!
+if ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F"))) then {
+
+} else {
+	_unit linkItem "ItemWatch";
+};
+
+
+//Add a UAV terminal to Squad leaders. Normal GPS for the other units
+if (_unit isKindOf "B_Soldier_SL_F") then {
+	_unit linkItem "B_UavTerminal";
+} else {
+	_unit linkItem "ItemGPS";
+};
 
 
 //Add Binos

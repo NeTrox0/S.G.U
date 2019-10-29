@@ -15,12 +15,12 @@ _medSys = _this select 1;
 
 Systemchat "karta, kompass.. Radio.";
 
-//assign the base arma items.
-[_unit] execVM "scripts\gear\items\assign_Items.sqf";
-sleep 1;
-
 //assign the Radio.
 [_unit] execVM "scripts\gear\items\assign_Radio.sqf";
+sleep 1;
+
+//assign the base arma items.
+[_unit] execVM "scripts\gear\items\assign_Items.sqf";
 sleep 1;
 
 //assign the ACE and ACEX items.
@@ -28,5 +28,5 @@ sleep 1;
 sleep 1;
 
 //assign medical items.
-Systemchat "förband skall du ha med, hoppas du slipper använda det..";
+Systemchat "förband skall du ha med, hoppas du slipper använda dem..";
 [_unit,_medSys] execVM "scripts\gear\items\assign_Medical.sqf";

@@ -21,7 +21,7 @@ _unit addItemToUniform "ACE_IR_Strobe_Item";
 if (_unit isKindOf "B_Pilot_F") then {
 	// No NVG for JET Pilot. IT will overwrite the helmet!
 } else {
-	_unit linkItem "ACE_NVG_Wide";
+	_unit addItemToBackpack "ACE_NVG_Wide";
 };
 
 

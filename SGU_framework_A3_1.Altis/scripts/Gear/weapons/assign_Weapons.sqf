@@ -65,3 +65,28 @@ switch (true) do {
 		for "_i" from 1 to 6 do {_unit addItemToVest "sfp_30Rnd_556x45_Stanag_plastic";};
 	};
 };
+
+switch (true) do {
+	case (_unit isKindOf "B_Helipilot_F");
+	case (_unit isKindOf "B_Pilot_F"): {
+	
+	};
+	case (_unit isKindOf "B_Soldier_M_F"): {
+		_unit addItemToBackpack "muzzle_snds_B";
+		_unit addItemToBackpack "optic_MRCO";
+	};
+	default {
+		_unit addItemToBackpack "muzzle_snds_M";
+	};
+};
+
+
+
+
+
+
+
+
+
+
+
