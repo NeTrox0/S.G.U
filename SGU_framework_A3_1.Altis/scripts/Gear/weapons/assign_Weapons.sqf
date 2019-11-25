@@ -22,6 +22,7 @@ switch (true) do {
 		
 		for "_i" from 1 to 6 do {_unit addItemToVest "sfp_30Rnd_556x45_Stanag_tracer_plastic";};
 		for "_i" from 1 to 8 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
+		for "_i" from 1 to 4 do {_unit addItemToBackpack "UGL_FlareCIR_F";};
 	};
 	case (_unit isKindOf "B_soldier_GL_F"): {
 		_unit addWeapon "sfp_ak5c_m203";

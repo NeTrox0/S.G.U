@@ -47,4 +47,9 @@ if (_unit isKindOf "B_engineer_F") then {
 
 if (_unit isKindOf "B_Soldier_M_F") then {
 	_unit addItemToUniform "ACE_RangeCard";
+	_unit addItemToUniform "ACE_Kestrel4500";
+};
+
+if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F")) then {
+	for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_Chemlight_HiYellow";};
 };
