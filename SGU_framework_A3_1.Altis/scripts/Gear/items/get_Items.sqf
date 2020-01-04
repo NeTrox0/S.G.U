@@ -3,8 +3,7 @@
 *	Requires: ACE, ACEX, ACRE2 or TFAR
 *	
 *	Parameters:
-*	Player,
-*	medSys values "B" or "A"
+*	Player
 *
 *	By Trox
 */
@@ -29,4 +28,4 @@ sleep 1;
 
 //assign medical items.
 Systemchat "förband skall du ha med, hoppas du slipper använda dem..";
-[_unit,_medSys] execVM "scripts\gear\items\assign_Medical.sqf";
+[_unit] execVM "scripts\gear\items\assign_Medical.sqf";
