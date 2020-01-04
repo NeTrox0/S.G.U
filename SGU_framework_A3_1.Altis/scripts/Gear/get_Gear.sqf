@@ -4,15 +4,13 @@
 *	
 *	Parameters:
 *	Player,
-*	cammo values "W" or "D",
-*	medSys values "B" or "A"
+*	cammo values "W" or "D"
 *
 *	By Trox
 */
 
 _unit =  _this select 0;
 _cammo = _this select 1;
-_medSys = _this select 2;
 
 _gear = false;
 
@@ -38,7 +36,7 @@ waitUntil {_gear};
 sleep 1;
 
 //assign the items that the gear should include
-[_unit,_medSys] execVM "scripts\gear\items\get_Items.sqf";
+[_unit] execVM "scripts\gear\items\get_Items.sqf";
 sleep 2;
 
 //assign the weapons.
