@@ -8,7 +8,7 @@
 		author = "Trox";
 		_generalMacro="SGU_Carrier_Rig";
         scope = 2;
-        displayName = "SGU Carrier Rig";
+        displayName = "SWE Carrier Rig";
         picture = "\A3\Characters_f\Data\UI\icon_V_plate_carrier_2_CA.paa";
         model = "\A3\Characters_F\BLUFOR\equip_b_Vest01.p3d";
         hiddenSelections[] = {"camo"};
@@ -53,7 +53,7 @@
 		author = "Trox";
 		_generalMacro="SGU_Carrier_Rig_Lite";
         scope = 2;
-        displayName = "SGU Carrier Rig Lite";
+        displayName = "SWE Carrier Rig Lite";
         picture = "\A3\Characters_f\Data\UI\icon_V_plate_carrier_1_CA.paa";
         model = "\A3\Characters_F\BLUFOR\equip_b_Vest02.p3d";
         hiddenSelections[] = {"camo"};
@@ -98,7 +98,7 @@
 		author = "Trox";
 		_generalMacro="SGU_Carrier_Rig_Name";
         scope = 2;
-        displayName = "SGU Carrier Rig Name";
+        displayName = "SWE Carrier Rig Name";
         picture = "\A3\Characters_f\Data\UI\icon_V_plate_carrier_1_CA.paa";
         model = "\A3\Characters_F_EPA\BLUFOR\equip_b_vest_kerry.p3d";
         hiddenSelections[] = {"camo"};
@@ -143,7 +143,7 @@
 		author = "Trox";
 		_generalMacro="SGU_Carrier_Rig_Name";
         scope = 2;
-        displayName = "SGU Carrier Rig Trox";
+        displayName = "SWE Carrier Rig Trox";
         picture = "\A3\Characters_f\Data\UI\icon_V_plate_carrier_1_CA.paa";
         model = "\A3\Characters_F_EPA\BLUFOR\equip_b_vest_kerry.p3d";
         hiddenSelections[] = {"camo"};
@@ -188,18 +188,18 @@
 	class SGU_Carrier_Rig_Tan: SGU_Carrier_Rig
     {
 		author = "Trox";
-        displayName = "SGU Carrier Rig Tan";
+        displayName = "SWE Carrier Rig Tan";
         hiddenSelectionsTextures[] = {"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"};
     };
     class SGU_Carrier_Rig_Lite_Tan: SGU_Carrier_Rig_Lite
     {
 		author = "Trox";
-        displayName = "SGU Carrier Rig Lite Tan";
+        displayName = "SWE Carrier Rig Lite Tan";
         hiddenSelectionsTextures[] = {"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"};
     };
     class SGU_Carrier_Rig_Name_Tan: SGU_Carrier_Rig_Name
     {
 		author = "Trox";
-        displayName = "SGU Carrier Rig Tan Name";
+        displayName = "SWE Carrier Rig Tan Name";
         hiddenSelectionsTextures[] = {"\SGU_Core\Data\vest\SGU_vest_tan_co.paa"};
     };

@@ -5,7 +5,7 @@
 */
     class SGU_Berret: ItemCore
     {
-        author = "Trox S.G.U";
+        author = "Trox";
         scope = 2;
         weaponPoolAvailable = 1;
         displayName = "SGU Berret";
