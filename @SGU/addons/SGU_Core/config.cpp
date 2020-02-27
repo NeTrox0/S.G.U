@@ -35,15 +35,8 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = 
 		{
-			"A3_Modules_F",
-			"A3_UI_F",
-			"A3_Structures_F_Items_Electronics",
-			"A3_Weapons_F_ItemHolders",
-			"A3_Weapons_F",
-			"A3_Weapons_F_Items",
-			"A3_Data_F",
-			"A3_Air_F",
-			"A3_Armor_F"
+			"A3_Characters_F",
+			"A3_Weapons_F"
 		};
 		magazines[] = {};
 		ammo[] = {};
@@ -52,42 +45,12 @@ class CfgPatches
 
 class CfgFactionClasses
 {
-	class SGU
+	class SGU_F
 	{
-		displayName = "SGU (W)";
+		displayName = "SGU";
 		icon = "\SGU_Core\UI\SGU_Patch_x128_128.paa"; //Custom Icon 
 		priority = 1; // Position in list. 
 		side = 1; // Opfor = 0, Blufor = 1, Indep = 2. 
-	};
-	class SGU_D
-	{
-		displayName = "SGU (D)";
-		icon = "\SGU_Core\UI\SGU_Patch_x128_128.paa"; //Custom Icon 
-		priority = 1; // Position in list. 
-		side = 1; // Opfor = 0, Blufor = 1, Indep = 2. 
-	};
-};
-class CfgVehicleClasses
-{
-	class APCs
-	{
-		displayName = "APCs";
-	};
-	class Men
-	{
-		displayName = "Men";
-	};
-	class Men_SF
-	{
-		displayName = "Men (Special Forces)";
-	};
-	class Planes
-	{
-		displayName = "Planes";
-	};
-	class Tanks
-	{
-		displayName = "Tanks";
 	};
 };
 class CfgUnitInsignia
@@ -101,29 +64,23 @@ class CfgUnitInsignia
     };
 };
 class CfgVehicles
-{
+{	
 	class ReammoBox;
-	class NATO_Box_Base;
-	class B_Kitbag_Base;
-	class Bag_Base;
-	class B_Soldier_base_F;
-	class B_Soldier_F;
+	class ContainerSupply;
+	class Bag_Base: ReammoBox {};
 	#include "backpack.hpp"
 };
 class CfgWeapons
 {
-	class Uniform_Base;
-	class UniformItem;
-	class Iteminfo;
-	class ItemCore;
-	class HeadgearItem;
 	class InventoryItem_Base_F;
-	class Vest_Camo_Base;
-	class Vest_NoCamo_Base;
-	class VestItem;
-	class vest_Base;
-	class V_PlateCarrier_Kerry;
-	class H_HelmetB;
+	class HeadgearItem: InventoryItem_Base_F {};
+	class VestItem: InventoryItem_Base_F {};
+	class ItemCore;
 	#include "headgear.hpp"
+	
+	class Vest_NoCamo_Base: ItemCore {};
+	class V_PlateCarrier1_rgr: Vest_NoCamo_Base {};
+	class V_PlateCarrier_Kerry: V_PlateCarrier1_rgr {};
+	class Vest_Camo_Base: ItemCore {};
 	#include "vest.hpp"
 };
