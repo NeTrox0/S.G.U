@@ -30,20 +30,21 @@ switch (true) do {
 		_unit addPrimaryWeaponItem "sfp_30Rnd_556x45_Stanag_plastic";
 		_unit addPrimaryWeaponItem "1Rnd_HE_Grenade_shell";
 		
-		for "_i" from 1 to 6 do {this addItemToVest "sfp_30Rnd_556x45_Stanag_plastic";};
-		for "_i" from 1 to 8 do {this addItemToBackpack "1Rnd_HE_Grenade_shell";};
+		for "_i" from 1 to 6 do {_unit addItemToVest "sfp_30Rnd_556x45_Stanag_plastic";};
+		for "_i" from 1 to 12 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
+		for "_i" from 1 to 4 do {_unit addItemToBackpack "UGL_FlareCIR_F";};
 	};
 	case (_unit isKindOf "B_soldier_AR_F"): {
 		_unit addWeapon "LMG_03_F";
 		_unit addPrimaryWeaponItem "sfp_optic_3x_aimpoint";
-		_unit addPrimaryWeaponItem "200Rnd_556x45_Box_Red_F";
+		_unit addPrimaryWeaponItem "200Rnd_556x45_Box_Tracer_Red_F";
 		
-		for "_i" from 1 to 2 do {_unit addItemToVest "200Rnd_556x45_Box_Red_F";};
-		for "_i" from 1 to 2 do {_unit addItemToBackpack "200Rnd_556x45_Box_Red_F";};
+		for "_i" from 1 to 2 do {_unit addItemToVest "200Rnd_556x45_Box_Tracer_Red_F";};
+		for "_i" from 1 to 2 do {_unit addItemToBackpack "200Rnd_556x45_Box_Tracer_Red_F";};
 	};
 	case (_unit isKindOf "B_Soldier_M_F"): {
 		_unit addWeapon "sfp_ak4d";
-		_unit addPrimaryWeaponItem "optic_DMS";
+		_unit addPrimaryWeaponItem "optic_AMS";
 		_unit addPrimaryWeaponItem "bipod_02_F_blk";
 		_unit addPrimaryWeaponItem "sfp_20Rnd_762x51_ak4_ap";
 		
@@ -74,7 +75,7 @@ switch (true) do {
 	};
 	case (_unit isKindOf "B_Soldier_M_F"): {
 		_unit addItemToBackpack "muzzle_snds_B";
-		_unit addItemToBackpack "optic_MRCO";
+		_unit addItemToBackpack "optic_ARCO_blk_F";
 	};
 	default {
 		_unit addItemToBackpack "muzzle_snds_M";

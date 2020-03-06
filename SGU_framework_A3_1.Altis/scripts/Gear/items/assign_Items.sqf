@@ -32,11 +32,18 @@ if (_unit isKindOf "B_Soldier_SL_F") then {
 
 
 //Add Binos
-if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F")) then {
-	_unit addMagazine "Laserbatteries";
-	_unit addWeapon "Laserdesignator_03";
-} else {
-	_unit addWeapon "Binocular"; //Because Binos can hurt you.. :)
+switch (true) do {
+	case (_unit isKindOf "B_soldier_TL_F"); 
+	case (_unit isKindOf "B_Soldier_SL_F"): {
+		_unit addMagazine "Laserbatteries";
+		_unit addWeapon "Laserdesignator_03";
+	};
+	case (_unit isKindOf "B_Soldier_M_F"): {
+		_unit addWeapon "Rangefinder";
+	};
+	default {
+		_unit addWeapon "Binocular"; //Because Binos can hurt you.. :)
+	};
 };
 
 

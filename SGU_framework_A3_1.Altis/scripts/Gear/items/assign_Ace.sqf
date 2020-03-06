@@ -52,4 +52,5 @@ if (_unit isKindOf "B_Soldier_M_F") then {
 
 if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F")) then {
 	for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_Chemlight_HiYellow";};
+	_unit addItemToBackpack "ACE_MX2A";
 };
