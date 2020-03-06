@@ -28,10 +28,13 @@
 	SGU_Arsenal allowDamage false;
 	SGU_Arsenal enableSimulation false;
 
-	SGU_Arsenal addAction[("<t size='1.3' shadow='2' color='#33cc33'>") + "Open Arsenal" + "</t>",{["Open",true] call BIS_fnc_arsenal;},[],1,false,true,"","_this distance _target < 15"];
+//	SGU_Arsenal addAction[("<t size='1.3' shadow='2' color='#33cc33'>") + "BIS Arsenal" + "</t>",{["Open",true] call BIS_fnc_arsenal;},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction[("<t size='1.3' shadow='2' color='#33cc33'>") + "ACE Arsenal" + "</t>",{[SGU_Arsenal, player, true] call ace_arsenal_fnc_openBox;},[],1,false,true,"","_this distance _target < 15"];
 	SGU_Arsenal addAction ["<t size='1.2' shadow='1' color='#ff0000'>----------------</t>", "",[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90</t>", {[player,"W","A"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
-	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90K</t>", {[player,"D","A"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90</t>", {[player,"W"," "] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90K</t>", {[player," "," "] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>MCT</t>", {[player,"W","P"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>MC</t>", {[player," ","P"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
 };
 
 //Group Management system. initialize the player side of the framework.
