@@ -4,13 +4,15 @@
 *	
 *	Parameters:
 *	Player,
-*	cammo values "W" or "D"
+*	cammo values "W" or " "
+*	srvr  values "P" or " "
 *
 *	By Trox
 */
 
 _unit =  _this select 0;
 _cammo = _this select 1;
+_srvr = _this select 2;
 
 _gear = false;
 
@@ -31,7 +33,11 @@ removeGoggles _unit;
 Systemchat "Varsegod en uniform. Som ny, nästan..";
 
 //assign the actual gear to the player. like uniform vest and backpack.
-_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_Gear.sqf";
+if (_srvr == "P") then {	
+	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_GearP.sqf";
+} else {
+	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_Gear.sqf";
+};
 waitUntil {_gear};
 sleep 1;
 

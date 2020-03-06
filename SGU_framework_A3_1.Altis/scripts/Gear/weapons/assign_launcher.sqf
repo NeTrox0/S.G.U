@@ -13,8 +13,11 @@ _unit = _this select 0;
 
 //Add special weapon and attachments
 switch (true) do {
-	case (_unit isKindOf "B_soldier_LAT_F"): {
+	case (_unit isKindOf "B_soldier_LAT_F"): { 
 		_unit addWeapon selectRandom ["launch_NLAW_F","rhs_weap_M136"];
+	};
+	case (_unit isKindOf "B_soldier_GL_F"): {
+		_unit addWeapon "rhs_weap_M136";
 	};
 	case (_unit isKindOf "B_soldier_LAT2_F"): {
 		_unit addWeapon "launch_MRAWS_olive_F";

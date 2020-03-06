@@ -1,6 +1,6 @@
 /*
 *	Select the gear for unit, using some parameters for Cammo
-*	Requires: SAM 3, SGU and ILLBE rewrite if TFAR is loaded.
+*	Requires: MLO ALL IN ONE, SGU and ILLBE rewrite if TFAR is loaded.
 *	
 *	Parameters:
 *	Player,
@@ -24,10 +24,10 @@ switch (true) do {
 		_unit addHeadgear "H_PilotHelmetHeli_B";
 	};
 	default {
-		if (_cammo == "W") then {
-			_unit addHeadgear "SAM_HelmetB_M90";
-	    } else {
-			_unit addHeadgear "SAM_HelmetB_M90K";
+		if (_cammo == "W") then {	
+			_unit addHeadgear selectRandom ["VSM_MulticamTropic_OPS","VSM_MulticamTropic_OPS_2"];
+		} else {
+			_unit addHeadgear selectRandom ["VSM_OPS_Multicam","VSM_OPS_2_Multicam"];
 		};
 	};
 };
@@ -39,10 +39,10 @@ switch (true) do {
 		_unit forceAddUniform "U_B_PilotCoveralls";
 	};
 	default {
-		if (_cammo == "W") then {
-			_unit forceAddUniform "SAM_Crye_M90_uniform";
+		if (_cammo == "W") then {	
+			_unit forceAddUniform "VSM_MulticamTropic_Crye_Camo";
 		} else {
-			_unit forceAddUniform "SAM_Crye_M90K_uniform";
+			_unit forceAddUniform "VSM_Multicam_Crye_Camo";
 		};
 	};
 };
@@ -56,11 +56,18 @@ switch (true) do {
 	case (_unit isKindOf "B_Helipilot_F"): {
 		_unit addVest "V_TacVest_blk";
 	};
+	case (_unit isKindOf "B_soldier_AR_F"): {
+		if (_cammo == "W") then {
+			_unit addVest "VSM_LBT6094_MG_MulticamTropic";
+		} else {
+			_unit addVest "VSM_LBT6094_MG_Multicam";
+		};
+	};
 	default {
 		if (_cammo == "W") then {
-			_unit addVest selectRandom ["SGU_Carrier_Rig", "SGU_Carrier_Rig_Lite", "SGU_Carrier_Rig_Name"];
+			_unit addVest "VSM_LBT6094_operator_MulticamTropic";
 		} else {
-			_unit addVest selectRandom ["SGU_Carrier_Rig_Tan", "SGU_Carrier_Rig_Lite_Tan", "SGU_Carrier_Rig_Name_Tan"];
+			_unit addVest "VSM_LBT6094_operator_Multicam";
 		};
 	};
 };
@@ -69,19 +76,21 @@ switch (true) do {
 //backpack
 switch (true) do {
 	//Add TFAR radio bags to TL/SL if TFAR is loaded
-	case ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F"))): {
+	case ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F"))): {	
 		if (_cammo == "W") then {
-			_unit addBackpack "tfw_ilbe_whip_gr";
+			_unit addBackpack "tfw_ilbe_whip_mct";
 		} else {
-			_unit addBackpack "tfw_ilbe_whip_coy";
+			_unit addBackpack "tfw_ilbe_whip_mc";
 		};
 	};
 	//Add medic backpack
-	case (_unit isKindOf "B_medic_F"): {
+	case (_unit isKindOf "B_medic_F");
+	case (_unit isKindOf "B_engineer_F");
+	case (_unit isKindOf "B_soldier_LAT2_F"): {
 		if (_cammo == "W") then {
-			_unit addBackpack "SGU_Kitbag_Medic";
+			_unit addBackpack "VSM_MulticamTropic_Backpack_Kitbag";
 		} else {
-			_unit addBackpack "SGU_Kitbag_Medic_Tan";
+			_unit addBackpack "VSM_Multicam_Backpack_Kitbag";
 		};
 	};
 	case (_unit isKindOf "B_Pilot_F"): {
@@ -89,9 +98,9 @@ switch (true) do {
 	};
 	default {
 		if (_cammo == "W") then {
-			_unit addBackpack "SGU_Assault_Pack";
+			_unit addBackpack "VSM_MulticamTropic_Backpack_Compact";
 		} else {
-			_unit addBackpack "SGU_Assault_Pack_Tan";
+			_unit addBackpack "VSM_Multicam_Backpack_Compact";
 		};
 	};
 };
