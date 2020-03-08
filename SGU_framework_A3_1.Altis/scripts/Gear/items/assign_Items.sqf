@@ -45,8 +45,6 @@ switch (true) do {
 };
 
 
-
-
 //Add Binos
 switch (true) do {
 	case (_unit isKindOf "B_soldier_TL_F"); 
