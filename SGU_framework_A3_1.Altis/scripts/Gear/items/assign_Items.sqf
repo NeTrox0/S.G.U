@@ -24,10 +24,24 @@ if ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_unit isKindOf "B
 
 
 //Add a UAV terminal to Squad leaders. Normal GPS for the other units
-if (_unit isKindOf "B_Soldier_SL_F") then {
+if ((_unit isKindOf "B_Soldier_SL_F") or (_unit isKindOf "B_Soldier_UAV_F")) then {
 	_unit linkItem "B_UavTerminal";
 } else {
 	_unit linkItem "ItemGPS";
+};
+
+
+//Add NVG
+switch (true) do {
+	case (_unit isKindOf "B_Pilot_F"): {
+		
+	};
+	case (_unit isKindOf "B_Helipilot_F"): {
+		_unit addItemToBackpack "rhsusf_ANPVS_15";
+	};
+	default {
+		_unit addItemToBackpack "rhsusf_ANPVS_14"; //Because Binos can hurt you.. :)
+	};
 };
 
 
