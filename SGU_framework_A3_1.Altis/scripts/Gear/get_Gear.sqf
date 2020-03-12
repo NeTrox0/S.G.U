@@ -34,7 +34,7 @@ Systemchat "Varsegod en uniform. Som ny, nästan..";
 
 //assign the actual gear to the player. like uniform vest and backpack.
 if (_srvr == "P") then {	
-	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_GearP.sqf";
+	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_Gear_P.sqf";
 } else {
 	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_Gear.sqf";
 };
@@ -46,7 +46,7 @@ sleep 1;
 sleep 2;
 
 //assign the weapons.
-[_unit] execVM "scripts\gear\weapons\get_Weapons.sqf";
+[_unit,_srvr] execVM "scripts\gear\weapons\get_Weapons.sqf";
 sleep 2;
 
 //assign insignia 
