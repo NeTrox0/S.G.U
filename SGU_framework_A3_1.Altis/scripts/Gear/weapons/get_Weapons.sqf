@@ -9,13 +9,18 @@
 */
 
 _unit = _this select 0;
+_srvr = _this select 1;
 
 
 Systemchat "Vapen säger du, visst. Varsegod.";
 Systemchat "Ammunition, lösplug varsegod. Va? vill du ha skarp?";
 
 //assign Primary weapon.
-[_unit] execVM "scripts\gear\weapons\assign_Weapons.sqf";
+if (_srvr == "P") then {	
+	[_unit] execVM "scripts\gear\weapons\assign_Weapons_P.sqf";
+} else {
+	[_unit] execVM "scripts\gear\weapons\assign_Weapons.sqf";
+};
 sleep 1;
 
 //assign sidearm
