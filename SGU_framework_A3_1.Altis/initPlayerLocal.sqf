@@ -35,7 +35,11 @@
 	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>M90K</t>", {[player," "," "] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>MCT</t>", {[player,"W","P"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	SGU_Arsenal addAction ["<t size='1' shadow='1' color='#00ff00'>MC</t>", {[player," ","P"] execVM "scripts\gear\get_Gear.sqf"},[],1,false,true,"","_this distance _target < 15"];
-};
 
-//Group Management system. initialize the player side of the framework.
-["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+
+	//Give the player its gear automatically. No need for an object to require it.
+	[player,"W"," "] execVM "scripts\gear\get_Gear.sqf"
+	
+	//Group Management system. initialize the player side of the framework.
+	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+};

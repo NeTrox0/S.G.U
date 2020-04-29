@@ -16,16 +16,16 @@ if (!isdedicated) then
 	//Player is player... Japp player is player..
 	waitUntil {!isNull player};
 	waitUntil {player == player};	
-	//Script fÃ¶r Spelaren endast!
+	//Script för Spelaren endast!
 	
-		//LÃ¤gg till Brief.
+		//Lägg till Brief.
 		if (side player == west) then {[] call compile preProcessFileLineNumbers "briefing.sqf";};
 		if (side player == east) then {[] call compile preProcessFileLineNumbers "briefing_east.sqf";};
 		
-		//sÃ¤tt marker hÃ¶jden fÃ¶r att kunna tpa / spawna pÃ¥ carrier.
+		//sätt marker höjden för att kunna tpa / spawna på carrier.
 		//"USS-FREEDOM" setMarkerPosLocal [markerPos "USS-FREEDOM" select 0, markerPos "USS-FREEDOM" select 1, 24];
 };
 
 
 //	Acre 2 setup script way. 	Here is the code we use to setup bable:
-	[] call compile preprocessFileLineNumbers "Scripts\Acre\ACRE_init.sqf";
+//	[] call compile preprocessFileLineNumbers "Scripts\Acre\ACRE_init.sqf";
