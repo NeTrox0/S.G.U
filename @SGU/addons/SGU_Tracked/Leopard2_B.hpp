@@ -70,9 +70,9 @@
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-			"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-			"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+			"\SGU_Tracked\Data\Leopard\mbt_03_ext01_M90.paa",
+			"\SGU_Tracked\Data\Leopard\mbt_03_ext02_M90.paa",
+			"\SGU_Tracked\Data\Leopard\mbt_03_rcws_M90.paa",
 			"A3\armor_f\data\camonet_green_CO.paa"
 		};
 		textureList[]=
@@ -84,13 +84,13 @@
 		{
 			class SGU_01
 			{
-				displayName="Flat Green";
+				displayName="M90(Cammo)";
 				author="Trox";
 				textures[]=
 				{
-					"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-					"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-					"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_ext01_M90.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_ext02_M90.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_rcws_M90.paa",
 					"A3\armor_f\data\camonet_green_CO.paa"
 				};
 				factions[]=
@@ -104,9 +104,9 @@
 				author="$STR_A3_Bohemia_Interactive";
 				textures[]=
 				{
-					"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-					"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-					"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_ext01_M90.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_ext02_M90.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_rcws_M90.paa",
 					"A3\Armor_F\Data\camonet_AAF_Digi_Desert_CO.paa"
 				};
 				factions[]=
@@ -120,9 +120,9 @@
 				author="Trox";
 				textures[]=
 				{
-					"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-					"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-					"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_ext01_M90.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_ext02_M90.paa",
+					"\SGU_Tracked\Data\Leopard\mbt_03_rcws_M90.paa",
 					"\SGU_Tracked\Data\CamoNet\camonet_white_CO.paa"
 				};
 				factions[]=
