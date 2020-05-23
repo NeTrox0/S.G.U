@@ -17,7 +17,6 @@ _unit linkItem "ItemCompass";
 
 //IF TFAR is loaded and unit is a TL or SL do not give them any Watch. TFAR_MICRODAGR will take its place!
 if ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F"))) then {
-
 } else {
 	_unit linkItem "ItemWatch";
 };
@@ -34,7 +33,6 @@ if ((_unit isKindOf "B_Soldier_SL_F") or (_unit isKindOf "B_Soldier_UAV_F")) the
 //Add NVG
 switch (true) do {
 	case (_unit isKindOf "B_Pilot_F"): {
-		
 	};
 	case (_unit isKindOf "B_Helipilot_F"): {
 		_unit addItemToBackpack "rhsusf_ANPVS_15";
