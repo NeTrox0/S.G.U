@@ -1,6 +1,6 @@
 /*
 *	Select the weapons for unit.
-*	Requires: ACE
+*	Requires: ACE & SFP (Not really due to the checks)
 *	
 *	Parameters:
 *	Player
@@ -23,18 +23,20 @@ switch (true) do {
 	};
 	default {
 		for "_i" from 1 to 6 do {_unit addItemToVest "SmokeShellGreen";};
-		for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-		for "_i" from 1 to 2 do {_unit addItemToVest "ACE_M84";};
-		_unit addItemToVest "MiniGrenade";
+		
+		if (isClass(configfile >> "CfgPatches" >> "ace_grenades")) then { 
+			for "_i" from 1 to 2 do {_unit addItemToVest "ACE_M84";};
+		};
+
+		if (isClass(configfile >> "CfgPatches" >> "sfp_weapons_grenades")) then { 
+			for "_i" from 1 to 2 do {_unit addItemToVest "sfp_handgrenade_shgr56";};
+		} else {
+			for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
+		};
 		
 		if ((_unit isKindOf "B_soldier_TL_F") or (_unit isKindOf "B_Soldier_SL_F")) then {
-			for "_i" from 1 to 3 do {_unit addItemToBackpack "SmokeShellYellow";};
-			for "_i" from 1 to 3 do {_unit addItemToBackpack "B_IR_Grenade";};
+			for "_i" from 1 to 2 do {_unit addItemToBackpack "SmokeShellYellow";};
+			for "_i" from 1 to 2 do {_unit addItemToBackpack "B_IR_Grenade";};
 		};
 	};
 };
-
-
-/*
-sam_rhgr5
-*/
