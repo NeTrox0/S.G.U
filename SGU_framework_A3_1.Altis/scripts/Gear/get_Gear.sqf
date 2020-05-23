@@ -3,7 +3,7 @@
 *	Requires: ACE, ACEX, ACRE2 or TFAR, RHS, SAM3, SFP
 *	
 *	Parameters:
-*	Player,
+*	Player
 *	cammo values "W" or " "
 *	srvr  values "P" or " "
 *
@@ -17,7 +17,7 @@ _srvr = _this select 2;
 _gear = false;
 
 
-Systemchat "Ny utrustning? Visst lämna in det du har.";
+Systemchat "Ny utrustning! Visst, lämna in det du har.";
 
 //Remove existing items;
 removeAllWeapons _unit;
@@ -30,23 +30,24 @@ removeHeadgear _unit;
 removeGoggles _unit;
 
 
-Systemchat "Varsegod en uniform. Som ny, nästan..";
-
 //assign the actual gear to the player. like uniform vest and backpack.
 if (_srvr == "P") then {	
 	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_Gear_P.sqf";
 } else {
 	_gear = [_unit,_cammo] call compile preprocessfile "scripts\gear\assign_Gear.sqf";
 };
+Systemchat "Uniform, Väst och Ryggsäck.";
 waitUntil {_gear};
-sleep 1;
+
 
 //assign the items that the gear should include
 [_unit] execVM "scripts\gear\items\get_Items.sqf";
+Systemchat "karta, kompass, Radio..";
 sleep 2;
 
 //assign the weapons.
 [_unit,_srvr] execVM "scripts\gear\weapons\get_Weapons.sqf";
+Systemchat "Vapen, Ammunition, lösplug varsegod. Va? skarp?";
 sleep 2;
 
 //assign insignia 
