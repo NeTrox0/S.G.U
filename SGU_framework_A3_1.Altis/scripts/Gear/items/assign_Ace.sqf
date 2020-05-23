@@ -17,15 +17,6 @@ _unit addItemToUniform "ACE_CableTie";
 _unit addItemToUniform "ACE_Flashlight_XL50";
 _unit addItemToUniform "ACE_IR_Strobe_Item";
 
-/*
-//Add NVG 
-if (_unit isKindOf "B_Pilot_F") then {
-	// No NVG for JET Pilot. IT will overwrite the helmet!
-} else {
-	_unit addItemToBackpack "ACE_NVG_Wide";
-};
-*/
-
 //mer random mat ?
 //MAT för JET PILOT?
 //if ((_unit isKindOf "B_Pilot_F") then {} else {};
