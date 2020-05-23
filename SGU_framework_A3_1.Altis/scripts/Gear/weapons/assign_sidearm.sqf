@@ -21,3 +21,11 @@ if (_unit isKindOf "B_Pilot_F") then {
 } else {
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 };
+
+
+/*
+In those cases RHS isnt loaded ? :i
+this addWeapon "hgun_Pistol_heavy_01_F";
+this addHandgunItem "acc_flashlight_pistol";
+this addHandgunItem "11Rnd_45ACP_Mag";
+*/
