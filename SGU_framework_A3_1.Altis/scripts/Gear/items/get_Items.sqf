@@ -17,9 +17,11 @@ _unit = _this select 0;
 //assign the base arma items.
 [_unit] execVM "scripts\gear\items\assign_Items.sqf";
 
-//assign the ACE and ACEX items.
+//assign ACE items.
 [_unit] execVM "scripts\gear\items\assign_Ace.sqf";
 
-//assign medical items.
-Systemchat "förband skall du ha med, hoppas du slipper använda dem..";
+//assign ACEX items.
+[_unit] execVM "scripts\gear\items\assign_Acex.sqf";
+
+//assign ACE medical items.
 [_unit] execVM "scripts\gear\items\assign_Medical.sqf";

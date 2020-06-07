@@ -14,7 +14,7 @@ _unit = _this select 0;
 //IF ACE medical is loaded add ACE items.
 if (isClass(configfile >> "CfgPatches" >> "ace_medical")) then {
 
-	//Advanced medical
+	//Ace medical
 	for "_i" from 1 to 8 do {_unit addItemToUniform "ACE_elasticBandage";};
 	for "_i" from 1 to 4 do {_unit addItemToUniform "ACE_tourniquet";};
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_splint";};
@@ -40,7 +40,7 @@ if (isClass(configfile >> "CfgPatches" >> "ace_medical")) then {
 		_unit addItemToBackpack "ACE_personalAidKit";
 	};
 } else {
-	//basic ARMA 3 medical.
+	//ARMA medical.
 	for "_i" from 1 to 2 do {_unit addItemToUniform "FirstAidKit";};
 	
 	if (_unit isKindOf "B_medic_F") then {
