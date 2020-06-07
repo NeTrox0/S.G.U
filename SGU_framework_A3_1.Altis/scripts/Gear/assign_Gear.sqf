@@ -99,7 +99,6 @@ switch (true) do {
 	};
 };
 
-
 //set gear to true to allow continuation from caller.
 _gear = true;
 _gear;
