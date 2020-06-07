@@ -1,6 +1,6 @@
 /*
 *	Select the gear for unit, using some parameters for Cammo
-*	Requires: MLO ALL IN ONE, SGU and ILLBE rewrite if TFAR is loaded.
+*	Requires: MLO ALL IN ONE, ILLBE rewrite if TFAR is loaded.
 *	
 *	Parameters:
 *	Player,
@@ -107,9 +107,6 @@ switch (true) do {
 		};
 	};
 };
-
-
-
 
 //set gear to true to allow continuation from caller.
 _gear = true;
