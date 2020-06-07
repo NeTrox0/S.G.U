@@ -36,21 +36,15 @@ switch (true) do {
 			};
 		};
 	};
-
 	//Check if TFAR is loaded.
 	case (isClass(configfile >> "CfgPatches" >> "tfar_core")): {
 		//Add Radio (TFAR) fall all units.
 		switch (true) do {
-			case (_unit isKindOf "B_Pilot_F"): { // JET Pilot
-				_unit linkItem "TFAR_anprc152";
-			};
+			case (_unit isKindOf "B_Pilot_F"); // JET Pilot
 			case (_unit isKindOf "B_Helipilot_F"): { // Heli Pilot
 				_unit linkItem "TFAR_anprc152";
 			};
-			case (_unit isKindOf "B_soldier_TL_F"): {
-				_unit linkItem "TFAR_microdagr";
-				_unit linkItem "TFAR_anprc152";
-			};
+			case (_unit isKindOf "B_soldier_TL_F");
 			case (_unit isKindOf "B_Soldier_SL_F"): {
 				_unit linkItem "TFAR_microdagr";
 				_unit linkItem "TFAR_anprc152";
