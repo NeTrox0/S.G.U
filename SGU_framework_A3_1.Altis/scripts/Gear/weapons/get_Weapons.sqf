@@ -11,12 +11,11 @@
 _unit = _this select 0;
 _srvr = _this select 1;
 
-
 //assign Primary weapon.
-if (_srvr == "P") then {	
-	[_unit] execVM "scripts\gear\weapons\assign_Weapons_P.sqf";
-} else {
+if ((isClass(configfile >> "CfgPatches" >> "sfp_ak5")) and (isClass(configfile >> "CfgPatches" >> "sfp_ak4"))) then {
 	[_unit] execVM "scripts\gear\weapons\assign_Weapons.sqf";
+} else {
+	[_unit] execVM "scripts\gear\weapons\assign_Weapons_P.sqf";
 };
 
 //assign sidearm
@@ -27,3 +26,7 @@ if (_srvr == "P") then {
 
 //assign launchers.
 [_unit] execVM "scripts\gear\weapons\assign_Launcher.sqf";
+
+
+
+
