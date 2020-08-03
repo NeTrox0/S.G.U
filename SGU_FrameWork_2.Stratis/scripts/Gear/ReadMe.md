@@ -7,7 +7,7 @@ By Trox
 ******************************************************************
 
 Each playable unit should have a role set in their INIT field as shown below. Change "PC" to the respective role.
-If no "Roll" is assigned to a unit a regular Rifleman(SOLD) is defaulted to.
+If no "Role" is assigned to a unit a regular Rifleman(SOLD) is defaulted to.
 this setVariable ["Role","PC"];
 
 //Group Roles
