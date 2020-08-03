@@ -10,7 +10,7 @@ class Params {
 		title = "Cammo of the gear used by players";
         values[]={0, 1, 2, 3};
         texts[]={"M90", "M90K", "MC", "MCT"};
-        default = "M90";
+        default = 0;
     };
 /*		
 	class spacer_1 { // Spacer
