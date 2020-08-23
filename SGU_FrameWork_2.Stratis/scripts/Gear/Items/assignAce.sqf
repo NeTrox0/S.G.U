@@ -28,7 +28,7 @@ if ((_role == "ING") or (_role == "CREW3")) then {
 	_unit addItemToBackpack "ACE_VMH3";
 };
 
-if (_role == "SKRP") then {
+if ((_role == "SKRP") or (_role == "SJV2")) then {
 	_unit addItemToUniform "ACE_RangeCard";
 	_unit addItemToUniform "ACE_Kestrel4500";
 };

@@ -52,7 +52,8 @@ switch (true) do {
 		_unit addMagazine "Laserbatteries";
 		_unit addWeapon "Laserdesignator_03";
 	};
-	case (_role == "SKRP"): {
+	case (_role == "SKRP");
+	case (_role == "SJV2"): {
 		_unit addWeapon "Rangefinder";
 	};
 	default {
