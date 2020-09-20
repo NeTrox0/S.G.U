@@ -15,6 +15,8 @@ class CfgPatches
 		{
 			"SGU_Assault_Pack",
 			"SGU_Assault_Pack_Tan",
+			"SGU_Assault_Pack_Medic",
+			"SGU_Assault_Pack_Medic_Tan",
 			"SGU_Assault_Pack_Trox",
 			"SGU_Kitbag",
 			"SGU_Kitbag_Tan",
