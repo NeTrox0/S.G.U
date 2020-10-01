@@ -22,7 +22,8 @@
 			"\SGU_Core\Data\vest\SGU_vest_co.paa"
 		};
 		scope=0;
-		maximumLoad=280;
+//		maximumLoad=160; //Assault pack default	
+		maximumLoad=200; //20% ish increase
 		passThrough=1;
 		mass=20;
 	};
@@ -97,9 +98,10 @@
 		hiddenSelections[]=	{"camo"};
 		hiddenSelectionsTextures[]=	{"\SGU_Core\Data\Backpack\SGU_Kitbag_rgr_co.paa"};
 		scope=0;
-		maximumLoad=340;
+//		maximumLoad=280; //Kitbag default
+		maximumLoad=320; //15% ish increase
 		passThrough=1;
-		mass=40;
+		mass=50;
 	};	
 //Kitbag
 	class SGU_Kitbag: SGU_Kitbag_Base
@@ -134,4 +136,4 @@
 		picture="\A3\Weapons_F\ammoboxes\bags\data\ui\icon_b_kitbag_cbr_ca.paa";
 		hiddenSelectionsTextures[]=	{"\SGU_Core\Data\Backpack\SGU_Kitbag_medic_cbr_co.paa"};
 		displayName="SWE Kitbag Tan (Medic)";
-	};
+	};	
