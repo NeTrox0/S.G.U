@@ -22,9 +22,13 @@ GRG
 GRT		AT4
 SOLD	RB57
 ING 	INGENJÖR
+FARB	FÄLTARBETARE
 SKRP 	SKARPSKYTT
 UAV
 PRSK	Prickskytt (Ej aktuell för nu)
+
+//Assist Roles
+GRGA	GRG ASS
 
 //Pilots
 HPIL 	HeloPilot
@@ -37,5 +41,5 @@ CREW2	Besättning SJV
 CREW3	Besättning ING
 
 
-To switch cammo used by the script parameters can be set before mission start.
+Switch cammo by using the parameters, they can be set before mission start.
 If you want to permanently change the cammo chosen by the script change the default value in the Param.hpp file.

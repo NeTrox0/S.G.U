@@ -16,20 +16,20 @@ _gear = false;
 _unit =  _this select 0;
 _cammo = param [1, 9];
 _role = param [2, "0"];
-systemchat format ["LOG.Cammo: %1", _cammo];
-systemchat format ["LOD.Roll: %1", _role];
+//systemchat format ["LOG.Cammo: %1", _cammo];
+//systemchat format ["LOD.Roll: %1", _role];
 
 
 if (_cammo == 9) then {
 	_cammo = ["Gear_Cammo", 0] call BIS_fnc_getParamValue;
-	systemchat format ["LOG.2.Cammo: %1", _cammo];
+//	systemchat format ["LOG.2.Cammo: %1", _cammo];
 };
 
 //if no role is set try to get a role from the unit variable
 if (_role == "0") then {
 	//Get the set role for the unit. if no role variable is set default to role SOLD
 	_role = [_unit getVariable "Role"] param [0, "SOLD"];
-	systemchat format ["LOG.2.Roll: %1", _role];
+//	systemchat format ["LOG.2.Roll: %1", _role];
 };
 
 //Give unit new uniform vest and backpack.

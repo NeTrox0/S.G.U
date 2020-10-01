@@ -16,23 +16,21 @@ _unit setVariable ["Ace_medical_medicClass", 0];
 _unit setVariable ["ACE_isEOD", false];
 _unit setVariable ["ACE_isEngineer", 0];
 
-switch (true) do {
-	case (_role == "SJV");
-	case (_role == "SJV2");
-	case (_role == "CREW2"): {
+switch (_role) do {
+	case ("SJV");
+	case ("SJV2");
+	case ("CREW2"): {
 		//Set the unit as medic
 		_unit setVariable ["Ace_medical_medicClass", 1];
 	};
-	case (_role == "ING");
-	case (_role == "CREW3"): {
-		//Set the unit as an engineer and EOD.
-		_unit setVariable ["ACE_isEOD", true];
+	case ("ING");
+	case ("CREW3"): {
+		//Set the unit as an engineer
 		_unit setVariable ["ACE_isEngineer", 1];
+	};
+	case ("FARB"): {
+		//Set the unit as an EOD.
+		_unit setVariable ["ACE_isEOD", true];
 	};
 	default {};
 };
-
-
-
-
-

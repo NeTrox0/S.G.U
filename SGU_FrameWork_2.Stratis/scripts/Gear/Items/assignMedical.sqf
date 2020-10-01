@@ -16,9 +16,8 @@ _role = _this select 1;
 if (isClass(configfile >> "CfgPatches" >> "ace_medical")) then {
 
 	//Ace medical
-	switch (true) do {
-		case (_role == "SJV");
-		case (_role == "CREW2"): {
+	switch (_role) do {
+		case ("SJV"): {
 			for "_i" from 1 to 20 do {_unit addItemToBackpack "ACE_fieldDressing";};
 			for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_elasticBandage";};
 			for "_i" from 1 to 20 do {_unit addItemToBackpack "ACE_packingBandage";};
@@ -28,14 +27,15 @@ if (isClass(configfile >> "CfgPatches" >> "ace_medical")) then {
 			for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_morphine";};
 			for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_epinephrine";};
 			for "_i" from 1 to 2 do {_unit addItemToBackpack "ACE_bodyBag";};
-			for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_adenosine";};
+			for "_i" from 1 to 2 do {_unit addItemToBackpack "ACE_adenosine";};
 			for "_i" from 1 to 6 do {_unit addItemToBackpack "ACE_salineIV_500";};
 			for "_i" from 1 to 6 do {_unit addItemToBackpack "ACE_salineIV_250";};
 			for "_i" from 1 to 2 do {_unit addItemToBackpack "ACE_salineIV";};
 			_unit addItemToBackpack "ACE_surgicalKit";
-			_unit addItemToBackpack "ACE_personalAidKit";
+//			_unit addItemToBackpack "ACE_personalAidKit";
 		};
-		case (_role == "SJV2"): {
+		case ("SJV2");
+		case ("CREW2"): {
 			for "_i" from 1 to 12 do {_unit addItemToBackpack "ACE_fieldDressing";};
 			for "_i" from 1 to 20 do {_unit addItemToBackpack "ACE_elasticBandage";};
 			for "_i" from 1 to 12 do {_unit addItemToBackpack "ACE_packingBandage";};
@@ -45,12 +45,12 @@ if (isClass(configfile >> "CfgPatches" >> "ace_medical")) then {
 			for "_i" from 1 to 6 do {_unit addItemToBackpack "ACE_morphine";};
 			for "_i" from 1 to 6 do {_unit addItemToBackpack "ACE_epinephrine";};
 			for "_i" from 1 to 2 do {_unit addItemToBackpack "ACE_bodyBag";};
-			for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_adenosine";};
+			for "_i" from 1 to 2 do {_unit addItemToBackpack "ACE_adenosine";};
 			for "_i" from 1 to 4 do {_unit addItemToBackpack "ACE_salineIV_500";};
 			for "_i" from 1 to 4 do {_unit addItemToBackpack "ACE_salineIV_250";};
 			_unit addItemToBackpack "ACE_salineIV";
 			_unit addItemToBackpack "ACE_surgicalKit";
-			_unit addItemToBackpack "ACE_personalAidKit";
+//			_unit addItemToBackpack "ACE_personalAidKit";
 		};
 		default {
 			for "_i" from 1 to 8 do {_unit addItemToUniform "ACE_elasticBandage";};

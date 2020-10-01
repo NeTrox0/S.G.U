@@ -25,7 +25,9 @@ _Vest_Crew = "V_TacVest_blk";
 
 //BACKPACK
 _Backpack = "SGU_Assault_Pack";
-_Backpack_Sjv = "SGU_Kitbag_Medic";
+_Backpack_Sjv = "SGU_Assault_Pack_Medic";
+_Backpack_kit = "SGU_Kitbag";
+_Backpack_kit_Sjv = "SGU_Kitbag_Medic";
 _Backpack_UAV = "B_UAV_01_backpack_F";
 
 //***************************************************************//
@@ -36,17 +38,17 @@ _role = _this select 1;
 
 
 //Helmet
-switch (true) do {
-	case (_role == "JPIL"): {
+switch (_role) do {
+	case ("JPIL"): {
 		_unit addHeadgear _Helmet_JPilot;
 	};
-	case (_role == "HPIL"): {
+	case ("HPIL"): {
 		_unit addHeadgear _Helmet_HPilot;
 	};
-	case (_role == "VC");
-	case (_role == "CREW");
-	case (_role == "CREW2");
-	case (_role == "CREW3"): {
+	case ("VC");
+	case ("CREW");
+	case ("CREW2");
+	case ("CREW3"): {
 		_unit addHeadgear selectRandom _Helmet_Crew;
 	};
 	default {
@@ -56,8 +58,8 @@ switch (true) do {
 
 
 //Uniform
-switch (true) do {
-	case (_role == "JPIL"): {
+switch (_role) do {
+	case ("JPIL"): {
 		_unit forceAddUniform _Uniform_JPilot;
 	};
 	default {
@@ -67,15 +69,15 @@ switch (true) do {
 
 
 //Vest
-switch (true) do {
-	case (_role == "JPIL"): {};
-	case (_role == "HPIL"): {
+switch (_role) do {
+	case ("JPIL"): {};
+	case ("HPIL"): {
 		_unit addVest _Vest_HPilot;
 	};
-	case (_role == "VC");
-	case (_role == "CREW");
-	case (_role == "CREW2");
-	case (_role == "CREW3"): {
+	case ("VC");
+	case ("CREW");
+	case ("CREW2");
+	case ("CREW3"): {
 		_unit addVest _Vest_Crew;
 	};
 	default {
@@ -89,10 +91,17 @@ switch (true) do {
 	case ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_role == "GRPC") or (_role == "GRPC2") or (_role == "PLTC"))): {
 		_unit addBackpack "tfw_ilbe_whip_gr";
 	};
-	case (_role == "SJV");
+	case (_role == "SJV"): {
+		_unit addBackpack _Backpack_kit_Sjv;
+	};
+	case (_role == "SJV2");
 	case (_role == "CREW2"): {
 		_unit addBackpack _Backpack_Sjv;
 	};
+	case (_role == "GRGA");
+	case (_role == "FARB"): {
+		_unit addBackpack _Backpack_kit;
+	};	
 	case (_role == "UAV"): {
 		_unit addBackpack _Backpack_UAV;
 	};
@@ -100,13 +109,3 @@ switch (true) do {
 		_unit addBackpack _Backpack;
 	};
 };
-
-/*
-
-if (_item = typeName "ARRAY") then {
-	_unit addVest selectRandom _item;
-} else {
-	_unit addVest _item;
-};
-
-*/
