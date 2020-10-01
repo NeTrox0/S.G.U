@@ -16,20 +16,20 @@ switch (true) do {
 	//Check if ACRE2 is loaded.
 	case (isClass(configfile >> "CfgPatches" >> "ACRE_main")): {
 		//Add Radio(ACRE) for all units;
-		switch (true) do {
-			case (_role == "JPIL"): {
+		switch (_role) do {
+			case ("JPIL"): {
 				_unit addItemToUniform "ACRE_PRC152";
 			};
-			case (_role == "HPIL"): {
+			case ("HPIL"): {
 				_unit addItemToVest "ACRE_PRC152";
 			};
-			case (_role == "VC");
-			case (_role == "GRPC");
-			case (_role == "GRPC2"): {
+			case ("VC");
+			case ("GRPC");
+			case ("GRPC2"): {
 				_unit addItemToUniform "ACRE_PRC343";
 				_unit addItemToVest "ACRE_PRC152";
 			};
-			case (_role == "PLTC"): {
+			case ("PLTC"): {
 				_unit addItemToUniform "ACRE_PRC343";
 				_unit addItemToVest "ACRE_PRC152";
 				_unit addItemToBackpack "ACRE_PRC117F";
@@ -42,15 +42,15 @@ switch (true) do {
 	//Check if TFAR is loaded.
 	case (isClass(configfile >> "CfgPatches" >> "tfar_core")): {
 		//Add Radio (TFAR) fall all units.
-		switch (true) do {
-			case (_role == "JPIL");
-			case (_role == "HPIL"): {
+		switch (_role) do {
+			case ("JPIL");
+			case ("HPIL"): {
 				_unit linkItem "TFAR_anprc152";
 			};
-			case (_role == "VC");
-			case (_role == "GRPC");
-			case (_role == "GRPC2");
-			case (_role == "PLTC"): {
+			case ("VC");
+			case ("GRPC");
+			case ("GRPC2");
+			case ("PLTC"): {
 				_unit linkItem "TFAR_microdagr";
 				_unit linkItem "TFAR_anprc152";
 			};

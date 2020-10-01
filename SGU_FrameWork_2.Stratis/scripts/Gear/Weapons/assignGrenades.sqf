@@ -14,25 +14,25 @@ _role = _this select 1;
 
 
 //Smoke and frags
-switch (true) do {
-	case (_role == "HPIL"): {
+switch (_role) do {
+	case ("HPIL"): {
 		for "_i" from 1 to 3 do {_unit addItemToVest "SmokeShellGreen";};
 		_unit addItemToVest "SmokeShellYellow";
 	};
-	case (_role == "JPIL"): {
+	case ("JPIL"): {
 		for "_i" from 1 to 3 do {_unit addItemToUniform "SmokeShellGreen";};
 		_unit addItemToUniform "SmokeShellYellow";
 	};
-	case (_role == "VC");
-	case (_role == "CREW");
-	case (_role == "CREW2");
-	case (_role == "CREW3"): {
+	case ("VC");
+	case ("CREW");
+	case ("CREW2");
+	case ("CREW3"): {
 		for "_i" from 1 to 4 do {_unit addItemToVest "SmokeShellGreen";};
 
 		if (isClass(configfile >> "CfgPatches" >> "sfp_weapons_grenades")) then { 
-			for "_i" from 1 to 2 do {_unit addItemToVest "sfp_handgrenade_shgr56";};
+			_unit addItemToVest "sfp_handgrenade_shgr56";
 		} else {
-			for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
+			_unit addItemToVest "HandGrenade";
 		};
 		
 		if (_role == "VC") then {

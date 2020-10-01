@@ -26,14 +26,14 @@ removeBackpack _unit;
 
 
 //Get the items in the correct cammo
-switch (true) do {
-	case (_cammoInt == 1): { //1:M90K
+switch (_CammoInt) do {
+	case (1): { //1:M90K
 		[_unit, _role] call compile preprocessfile "scripts\gear\gear\M90K.sqf";
 	};
-	case (_cammoInt == 2): { //2:MC
+	case (2): { //2:MC
 		[_unit, _role] call compile preprocessfile "scripts\gear\gear\MC.sqf";
 	};
-	case (_cammoInt == 3): { //3:MCT
+	case (3): { //3:MCT
 		[_unit, _role] call compile preprocessfile "scripts\gear\gear\MCT.sqf";
 	};
 	default { //0:M90

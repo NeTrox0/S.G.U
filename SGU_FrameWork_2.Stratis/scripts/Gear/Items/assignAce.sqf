@@ -21,10 +21,15 @@ _unit addItemToUniform "ACE_IR_Strobe_Item";
 
 //Engineer items like EOD and explosives
 if ((_role == "ING") or (_role == "CREW3")) then {
+	_unit addItemToBackpack "ACE_EntrenchingTool";
+};
+
+//Engineer items like EOD and explosives
+if (_role == "FARB") then {
 	_unit addItemToBackpack "ACE_DefusalKit";
 	_unit addItemToBackpack "ACE_EntrenchingTool";
 	_unit addItemToBackpack "ACE_M26_Clacker";
-	_unit addItemToBackpack "ACE_wirecutter";
+//	_unit addItemToBackpack "ACE_wirecutter";
 	_unit addItemToBackpack "ACE_VMH3";
 };
 

@@ -24,27 +24,27 @@ if (_role == "JPIL") exitWith {};
 
 
 //1: Weapon
-switch (true) do {
-	case (_role == "PLTC");
-	case (_role == "GRPC");
-	case (_role == "GRT"): {
+switch (_role) do {
+	case ("PLTC");
+	case ("GRPC");
+	case ("GRT"): {
 		_unit addWeapon "sfp_ak5c_m203";
 	};
-	case (_role == "KSP90"): {
+	case ("KSP90"): {
 		_unit addWeapon "LMG_03_F";
 	};
-	case (_role == "KSP58"): {
+	case ("KSP58"): {
 		_unit addWeapon "rhs_weap_m240G";
 	};
-	case (_role == "SJV2");
-	case (_role == "SKRP"): {
+	case ("SJV2");
+	case ("SKRP"): {
 		_unit addWeapon "sfp_ak4d";
 	};
-	case (_role == "VC");
-	case (_role == "CREW");
-	case (_role == "CREW2");
-	case (_role == "CREW3");
-	case (_role == "HPIL"): {
+	case ("VC");
+	case ("CREW");
+	case ("CREW2");
+	case ("CREW3");
+	case ("HPIL"): {
 		_unit addWeapon "sfp_ak5dmk2";
 	};
 	default {
@@ -57,15 +57,15 @@ switch (true) do {
 _primWeapon = primaryWeapon _unit;
 
 //Optic
-switch (true) do {
-	case (_primWeapon == "sfp_ak5dmk2"): {
+switch (_primWeapon) do {
+	case ("sfp_ak5dmk2"): {
 		_unit addPrimaryWeaponItem "sfp_optic_aimpoint";
 	};
-	case (_primWeapon == "sfp_ak4d"): {
+	case ("sfp_ak4d"): {
 		_unit addPrimaryWeaponItem "optic_AMS";
 		_unit addItemToBackpack "optic_NVS";
 	};
-	case (_primWeapon == "rhs_weap_m240G"): {
+	case ("rhs_weap_m240G"): {
 		_unit addPrimaryWeaponItem "optic_Hamr";
 	};
 	default {
@@ -74,11 +74,11 @@ switch (true) do {
 };
 
 //Muzzle
-switch (true) do {
-	case (_primWeapon == "rhs_weap_m240G");
-	case (_primWeapon == "sfp_ak5dmk2"): {
+switch (_primWeapon) do {
+	case ("rhs_weap_m240G");
+	case ("sfp_ak5dmk2"): {
 	};
-	case (_primWeapon == "sfp_ak4d"): {
+	case ("sfp_ak4d"): {
 		_unit addItemToBackpack "muzzle_snds_B";
 	};
 	default {
@@ -87,8 +87,8 @@ switch (true) do {
 };
 
 //Underbarrel
-switch (true) do {
-	case (_primWeapon == "sfp_ak4d"): {
+switch (_primWeapon) do {
+	case ("sfp_ak4d"): {
 		_unit addPrimaryWeaponItem "bipod_02_F_blk";
 	};
 	default {		
@@ -96,8 +96,8 @@ switch (true) do {
 };
 
 //Side
-switch (true) do {
-	case (_primWeapon == "sfp_ak5c_m203"): {
+switch (_primWeapon) do {
+	case ("sfp_ak5c_m203"): {
 	};
 	default {		
 		_unit addPrimaryWeaponItem "acc_pointer_ir";

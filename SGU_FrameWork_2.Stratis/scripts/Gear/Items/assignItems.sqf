@@ -33,9 +33,9 @@ if ((_role == "PLTC") or (_role == "UAV")) then {
 
 
 //Add NVG
-switch (true) do {
-	case (_role == "JPIL"): {};
-	case (_role == "HPIL"): {
+switch (_role) do {
+	case ("JPIL"): {};
+	case ("HPIL"): {
 		_unit addItemToBackpack "rhsusf_ANPVS_15";
 	};
 	default {
@@ -45,15 +45,15 @@ switch (true) do {
 
 
 //Add Binos
-switch (true) do {
-	case (_role == "GRPC"); 
-	case (_role == "GRPC2"); 
-	case (_role == "PLTC"): {
+switch (_role) do {
+	case ("GRPC"); 
+	case ("GRPC2"); 
+	case ("PLTC"): {
 		_unit addMagazine "Laserbatteries";
 		_unit addWeapon "Laserdesignator_03";
 	};
-	case (_role == "SKRP");
-	case (_role == "SJV2"): {
+	case ("SKRP");
+	case ("SJV2"): {
 		_unit addWeapon "Rangefinder";
 	};
 	default {
@@ -63,9 +63,20 @@ switch (true) do {
 
 
 //Engineer items like EOD and explosives
-if ((_role == "ING") or (_role == "CREW3"))then {
-//	_unit addItemToBackpack "MineDetector";
-	_unit addItemToBackpack "ToolKit";
-
-	for "_i" from 1 to 2 do {_unit addItemToBackpack "DemoCharge_Remote_Mag";};
+switch (_role) do { 
+	case ("ING");
+	case ("CREW3"): {
+//		_unit addItemToBackpack "MineDetector";
+		_unit addItemToBackpack "ToolKit";
+	};
+	case ("FARB"): { 
+		for "_i" from 1 to 2 do {_unit addItemToBackpack "DemoCharge_Remote_Mag";};
+		for "_i" from 1 to 2 do {_unit addItemToBackpack "ClaymoreDirectionalMine_Remote_Mag";};
+		for "_i" from 1 to 2 do {_unit addItemToBackpack "SLAMDirectionalMine_Wire_Mag";};
+	
+		if (isClass(configfile >> "CfgPatches" >> "AMP_Breaching_Charge")) then {
+			for "_i" from 1 to 2 do {_unit addItemToBackpack "AMP_Breaching_Charge_Mag";};
+		};
+	};
+	default {};
 };

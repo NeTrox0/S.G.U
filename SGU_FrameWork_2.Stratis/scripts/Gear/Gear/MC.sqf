@@ -37,17 +37,17 @@ _role = _this select 1;
 
 
 //Helmet
-switch (true) do {
-	case (_role == "JPIL"): {
+switch (_role) do {
+	case ("JPIL"): {
 		_unit addHeadgear _Helmet_JPilot;
 	};
-	case (_role == "HPIL"): {
+	case ("HPIL"): {
 		_unit addHeadgear _Helmet_HPilot;
 	};
-	case (_role == "VC");
-	case (_role == "CREW");
-	case (_role == "CREW2");
-	case (_role == "CREW3"): {
+	case ("VC");
+	case ("CREW");
+	case ("CREW2");
+	case ("CREW3"): {
 		_unit addHeadgear selectRandom _Helmet_Crew;
 	};
 	default {
@@ -57,8 +57,8 @@ switch (true) do {
 
 
 //Uniform
-switch (true) do {
-	case (_role == "JPIL"): {
+switch (_role) do {
+	case ("JPIL"): {
 		_unit forceAddUniform _Uniform_JPilot;
 	};
 	default {
@@ -68,19 +68,19 @@ switch (true) do {
 
 
 //Vest
-switch (true) do {
-	case (_role == "JPIL"): {};
-	case (_role == "HPIL"): {
+switch (_role) do {
+	case ("JPIL"): {};
+	case ("HPIL"): {
 		_unit addVest _Vest_HPilot;
 	};
-	case (_role == "VC");
-	case (_role == "CREW");
-	case (_role == "CREW2");
-	case (_role == "CREW3"): {
+	case ("VC");
+	case ("CREW");
+	case ("CREW2");
+	case ("CREW3"): {
 		_unit addVest _Vest_Crew;
 	};
-	case (_role == "KSP90");
-	case (_role == "KSP58"): {
+	case ("KSP90");
+	case ("KSP58"): {
 		_unit addVest _Vest_KSP;
 	};
 	default {
@@ -94,9 +94,10 @@ switch (true) do {
 	case ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_role == "GRPC") or (_role == "GRPC2") or (_role == "PLTC"))): {
 		_unit addBackpack "tfw_ilbe_whip_mc";
 	};
-	case (_role == "ING"); 
-	case (_role == "GRG"); 
-	case (_role == "SJV"); 
+	case (_role == "FARB");
+	case (_role == "GRG");
+	case (_role == "GRGA");
+	case (_role == "SJV");
 	case (_role == "CREW2"): {
 		_unit addBackpack _Backpack_sjv;
 	};
