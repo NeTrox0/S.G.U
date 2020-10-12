@@ -38,6 +38,9 @@ switch (_role) do {
 	case ("HPIL"): {
 		_unit addItemToBackpack "rhsusf_ANPVS_15";
 	};
+	case ("UAV"): {
+		_unit addItemToVest "rhsusf_ANPVS_14";
+	};
 	default {
 		_unit addItemToBackpack "rhsusf_ANPVS_14";
 	};
@@ -48,7 +51,8 @@ switch (_role) do {
 switch (_role) do {
 	case ("GRPC"); 
 	case ("GRPC2"); 
-	case ("PLTC"): {
+	case ("PLTC"); 
+	case ("VC"): {
 		_unit addMagazine "Laserbatteries";
 		_unit addWeapon "Laserdesignator_03";
 	};

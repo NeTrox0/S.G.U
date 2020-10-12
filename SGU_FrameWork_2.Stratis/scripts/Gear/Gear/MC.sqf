@@ -108,13 +108,3 @@ switch (true) do {
 		_unit addBackpack _Backpack;
 	};
 };
-
-/*
-
-if (_item = typeName "ARRAY") then {
-	_unit addVest selectRandom _item;
-} else {
-	_unit addVest _item;
-};
-
-*/
