@@ -46,7 +46,7 @@ switch (_role) do {
 		//SOLD
 		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Skyttesoldat</t>", {[player,"SOLD"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 		//GRG ASS
-		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Assistent</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Ass</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
 	case ("GRG"): {
 		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG</t>", {[player,"GRG"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
@@ -58,7 +58,7 @@ switch (_role) do {
 		//SOLD
 		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Skyttesoldat</t>", {[player,"SOLD"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 		//GRG ASS
-		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Assistent</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Ass</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
 	
 	//Pilots
@@ -91,7 +91,7 @@ switch (_role) do {
 		//FARB
 		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Fältarbetare</t>", {[player,"FARB"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 		//GRG ASS
-		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Assistent</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Asst</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
 };
 
