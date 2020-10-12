@@ -82,7 +82,7 @@ switch (_primWeapon) do {
 		_unit addItemToBackpack "muzzle_snds_B";
 	};
 	default {
-		_unit addItemToBackpack "muzzle_snds_M";
+		_unit addItem "muzzle_snds_M";
 	};
 };
 
@@ -124,7 +124,6 @@ switch (true) do {
 		for "_i" from 1 to 2 do {_unit addItemToVest "sfp_20Rnd_762x51_ak4_tracer";};
 	};
 	case (_primWeapon == "sfp_ak5dmk2"): {
-		//Duplicate for below line OMMMMMMMMMMMMG. But it looks so much nicer..
 		for "_i" from 1 to 4 do {_unit addItemToVest "sfp_30Rnd_556x45_Stanag_plastic";};
 	};
 	default {

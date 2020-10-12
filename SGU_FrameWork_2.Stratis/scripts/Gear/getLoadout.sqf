@@ -14,8 +14,8 @@ _gear = false;
 
 
 _unit =  _this select 0;
-_cammo = param [1, 9];
-_role = param [2, "0"];
+_role = param [1, "0"];
+_cammo = param [2, 9];
 //systemchat format ["LOG.Cammo: %1", _cammo];
 //systemchat format ["LOD.Roll: %1", _role];
 

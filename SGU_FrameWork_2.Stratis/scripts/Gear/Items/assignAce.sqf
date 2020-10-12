@@ -38,7 +38,13 @@ if ((_role == "SKRP") or (_role == "SJV2")) then {
 	_unit addItemToUniform "ACE_Kestrel4500";
 };
 
-if ((_role == "GRPC") or (_role == "GRPC2") or (_role == "PLTC")) then {
-	for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_Chemlight_HiYellow";};
-	_unit addItemToBackpack "ACE_MX2A";
+switch (_role) do {
+	case ("PLTC");
+	case ("GRPC");
+	case ("GRPC2");
+	case ("VC"): {
+		for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_Chemlight_HiYellow";};
+		_unit addItemToBackpack "ACE_MX2A";
+	};
+	default {};
 };
