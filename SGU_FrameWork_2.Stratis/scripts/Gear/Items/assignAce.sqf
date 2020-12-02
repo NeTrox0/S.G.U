@@ -33,9 +33,14 @@ if (_role == "FARB") then {
 	_unit addItemToBackpack "ACE_VMH3";
 };
 
-if ((_role == "SKRP") or (_role == "SJV2")) then {
-	_unit addItemToUniform "ACE_RangeCard";
-	_unit addItemToUniform "ACE_Kestrel4500";
+switch (_role) do {
+	case ("PRSK");
+	case ("SKRP");
+	case ("SJV2"): {
+		_unit addItemToUniform "ACE_RangeCard";
+		_unit addItemToUniform "ACE_Kestrel4500";
+	};
+	default {};
 };
 
 switch (_role) do {

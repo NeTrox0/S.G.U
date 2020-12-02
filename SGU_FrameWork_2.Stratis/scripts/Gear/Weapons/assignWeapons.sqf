@@ -22,6 +22,11 @@ _role = _this select 1;
 //Jet Pilot exit.
 if (_role == "JPIL") exitWith {};
 
+//Special For PRSK AceGunbag
+if (_role == "PRSK") then {
+	_gunbag = [_unit] execVM "scripts\gear\weapons\assignAceGunbag.sqf";
+	sleep 0.1;
+};
 
 //1: Weapon
 switch (_role) do {
@@ -44,6 +49,7 @@ switch (_role) do {
 	case ("CREW");
 	case ("CREW2");
 	case ("CREW3");
+	case ("PRSK");
 	case ("HPIL"): {
 		_unit addWeapon "sfp_ak5dmk2";
 	};
@@ -63,7 +69,7 @@ switch (_primWeapon) do {
 	};
 	case ("sfp_ak4d"): {
 		_unit addPrimaryWeaponItem "optic_AMS";
-		_unit addItemToBackpack "optic_NVS";
+		_unit addItem "optic_NVS";
 	};
 	case ("rhs_weap_m240G"): {
 		_unit addPrimaryWeaponItem "optic_Hamr";

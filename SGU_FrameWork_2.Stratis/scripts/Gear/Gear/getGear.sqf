@@ -16,8 +16,6 @@ _unit =  _this select 0;
 _cammoInt = _this select 1;
 _role = _this select 2;
 
-_gear = false;
-
 //Remove old Gear.
 removeHeadgear _unit;
 removeUniform _unit;
@@ -43,5 +41,4 @@ switch (_CammoInt) do {
 
 
 //set gear to true to allow continuation from caller.
-_gear = true;
-_gear;
+true;

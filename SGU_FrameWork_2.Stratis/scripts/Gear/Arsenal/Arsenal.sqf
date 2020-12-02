@@ -60,13 +60,16 @@ switch (_role) do {
 		//GRG ASS
 		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Ass</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
+	case ("PRSK"): {
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Prickskytt</t>", {[player,"PRSK"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+	};
 	
 	//Pilots
 	case ("HPIL"): {
-		_object addAction ["<t size='1' shadow='1' color='#00ff00'>HELI PILOT</t>", {[player,"HPIL"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Helikopter Pilot</t>", {[player,"HPIL"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
 	case ("JPIL"): {
-		_object addAction ["<t size='1' shadow='1' color='#00ff00'>JET PILOT</t>", {[player,"JPIL"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Jet Pilot</t>", {[player,"JPIL"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
 	
 	//Vehicle Crew
@@ -91,7 +94,7 @@ switch (_role) do {
 		//FARB
 		_object addAction ["<t size='1' shadow='1' color='#00ff00'>Fältarbetare</t>", {[player,"FARB"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 		//GRG ASS
-		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Asst</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
+		_object addAction ["<t size='1' shadow='1' color='#00ff00'>GRG Ass</t>", {[player,"GRGA"] execVM "scripts\gear\getLoadout.sqf"},[],1,false,true,"","_this distance _target < 15"];
 	};
 };
 

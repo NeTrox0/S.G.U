@@ -91,6 +91,7 @@ switch (true) do {
 	case ((isClass(configfile >> "CfgPatches" >> "tfar_core")) and ((_role == "GRPC") or (_role == "GRPC2") or (_role == "PLTC"))): {
 		_unit addBackpack "tfw_ilbe_whip_gr";
 	};
+	case (_role == "HPIL"): {};
 	case (_role == "SJV"): {
 		_unit addBackpack _Backpack_kit_Sjv;
 	};
@@ -105,6 +106,9 @@ switch (true) do {
 	case (_role == "UAV"): {
 		_unit addBackpack _Backpack_UAV;
 	};
+	case (_role == "PRSK"): {
+		_unit addBackpack "ace_gunbag";
+	};	
 	default {
 		_unit addBackpack _Backpack;
 	};
