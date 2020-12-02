@@ -36,7 +36,7 @@ if ((_role == "PLTC") or (_role == "UAV")) then {
 switch (_role) do {
 	case ("JPIL"): {};
 	case ("HPIL"): {
-		_unit addItemToBackpack "rhsusf_ANPVS_15";
+		_unit addItemToVest "rhsusf_ANPVS_15";
 	};
 	case ("UAV"): {
 		_unit addItemToVest "rhsusf_ANPVS_14";
@@ -56,6 +56,7 @@ switch (_role) do {
 		_unit addMagazine "Laserbatteries";
 		_unit addWeapon "Laserdesignator_03";
 	};
+	case ("PRSK");
 	case ("SKRP");
 	case ("SJV2"): {
 		_unit addWeapon "Rangefinder";

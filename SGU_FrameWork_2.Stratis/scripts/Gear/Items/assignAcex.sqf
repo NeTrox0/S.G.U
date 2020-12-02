@@ -14,6 +14,7 @@ _role = _this select 1;
 
 //ACE Survival Food and drink.
 switch (_role) do {
+	case ("HPIL");
 	case ("UAV"): {
 		_unit addItemToVest selectRandom ["ACE_MRE_ChickenTikkaMasala","ACE_MRE_CreamChickenSoup","ACE_MRE_MeatballsPasta","ACE_MRE_SteakVegetables","ACE_MRE_BeefStew"];
 		_unit addItemToVest selectRandom ["ACE_Can_Franta","ACE_Can_Spirit"];
